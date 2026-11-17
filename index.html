@@ -281,6 +281,36 @@ section,dialog{scroll-margin-top:64px}
 .mtext h3{font-size:clamp(30px,3.6vw,48px)}
 .mtext p{color:var(--muted);font-size:17px}
 
+
+/* ===== Hero name + nav status + language ===== */
+.nav-l{display:flex;align-items:center;gap:14px;min-width:0}
+.logo{font-size:20px}
+nav .status{font:500 12.5px var(--body);letter-spacing:0;color:#c9cfdb;background:rgba(255,255,255,.07);padding:6px 12px 6px 10px;border-radius:999px;white-space:nowrap}
+nav .status i{width:7px;height:7px;box-shadow:0 0 0 0 rgba(63,214,143,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,214,143,.55)}70%{box-shadow:0 0 0 8px rgba(63,214,143,0)}100%{box-shadow:0 0 0 0 rgba(63,214,143,0)}}
+@media (max-width:520px){nav .status .st-t{display:none}nav .status{padding:8px}}
+.navlinks{align-items:center}
+.lang{display:inline-flex;background:rgba(255,255,255,.08);border-radius:999px;padding:3px;gap:2px}
+.lang button{border:0;background:transparent;color:#aeb5c4;font:600 12px var(--body);padding:5px 10px;border-radius:999px;cursor:pointer;letter-spacing:.02em}
+.lang button[aria-pressed="true"]{background:#f5f5f7;color:#0b0b0f}
+@media (max-width:720px){.navlinks{gap:10px}}
+.hero .wrap{padding-block:clamp(64px,10vw,130px) clamp(56px,8vw,96px)}
+.kicker{font:500 13px var(--body);color:var(--muted);letter-spacing:.02em}
+.name{font-size:clamp(56px,11.5vw,168px);font-weight:600!important;letter-spacing:-.055em;line-height:.92;margin-top:16px;max-width:none}
+.name .w{display:inline-block;color:#f5f5f7;white-space:nowrap}
+.name .ch{display:inline-block;animation:chIn 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes chIn{from{opacity:0;transform:translateY(.45em) rotate(4deg);filter:blur(12px)}to{opacity:1;transform:none;filter:none}}
+@keyframes sheen{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.tagline{font:500 clamp(26px,3.4vw,44px)/1.1 var(--display);letter-spacing:-.035em;margin-top:18px;animation:chIn 1s .7s cubic-bezier(.2,.8,.2,1) both}
+.tagline em{font-style:normal;color:var(--accent-2)}
+.hero .lead{animation:chIn 1s .85s cubic-bezier(.2,.8,.2,1) both}
+.hero .btns{animation:chIn 1s 1s cubic-bezier(.2,.8,.2,1) both}
+.marquee{position:absolute;left:0;right:0;bottom:6%;overflow:hidden;pointer-events:none;opacity:.5;-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+.mq-track{display:flex;width:max-content;animation:mq 60s linear infinite}
+.mq-track span{font:600 clamp(80px,14vw,220px)/1 var(--display);letter-spacing:-.04em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(127,164,255,.22);padding-right:.3em}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.name .ch,.tagline,.hero .lead,.hero .btns{animation:none}.mq-track,.name .w{animation:none}}
+
 /* Scroll-driven reveals: visible at rest; animate only where supported */
 @supports (animation-timeline: view()){
   @media (prefers-reduced-motion:no-preference){
@@ -297,18 +327,25 @@ section,dialog{scroll-margin-top:64px}
 
 <nav>
   <div class="wrap">
-    <a class="logo" href="#top">Joshua Bermudez<span>.</span></a>
+    <div class="nav-l">
+      <a class="logo" href="#top" aria-label="Joshua Bermudez, home">JB<span>.</span></a>
+      <span class="status"><i></i><span class="st-t">Open to roles &amp; freelance</span></span>
+    </div>
     <div class="navlinks">
-      <a href="#services">What I do</a><a href="#work">Work</a><a href="#about">About</a><a class="cta-s" href="#contact">Let's talk</a>
+      <a href="#services">What I do</a><a href="#work">Work</a><a href="#about">About</a>
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div>
+      <a class="cta-s" href="#contact">Let's talk</a>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <canvas id="wave" aria-hidden="true"></canvas>
+  <div class="marquee" aria-hidden="true"><div class="mq-track"><span>Brand · Ads · Motion · Data · Leadership · </span><span>Brand · Ads · Motion · Data · Leadership · </span></div></div>
   <div class="wrap">
-    <span class="status"><i></i>Open to roles &amp; freelance projects · San Salvador · Remote</span>
-    <h1>Creative that <em>performs.</em></h1>
+    <p class="kicker">San Salvador · Remote · Available worldwide</p>
+    <h1 class="name" aria-label="Joshua Bermudez"><span class="w">Joshua</span> <span class="w">Bermudez</span></h1>
+    <p class="tagline">Creative that <em>performs.</em></p>
     <p class="lead"><b>Growth Marketing &amp; Creative Specialist.</b> I design the brand, build the ad, run it on Google and Meta, read the numbers and lead the team that ships it. Marketing graduate (UCA), co-founder of VOOST, and supervisor of ad operations for U.S. travel and fintech accounts.</p>
     <div class="btns">
       <a class="btn primary" href="#work">See the work →</a>
@@ -469,6 +506,13 @@ section,dialog{scroll-margin-top:64px}
 <footer><div class="wrap"><span>© 2026 Joshua Bermudez</span><span>San Salvador, El Salvador</span></div></footer>
 
 <script>
+
+/* Hero name: split into letters with stagger */
+document.querySelectorAll('.name .w').forEach((w,wi)=>{
+  const t=w.textContent;w.textContent='';
+  [...t].forEach((c,i)=>{const sp=document.createElement('span');sp.className='ch';sp.textContent=c;sp.style.animationDelay=(wi*0.18+i*0.04)+'s';sp.setAttribute('aria-hidden','true');if(wi===1){const k=i/(t.length-1);sp.style.color=`rgb(${Math.round(245-118*k)},${Math.round(245-81*k)},255)`}w.appendChild(sp)});
+});
+
 /* Animated background: flowing signal lines that lean toward the cursor */
 (function(){
   const c=document.getElementById('wave'),x=c.getContext('2d');
@@ -519,6 +563,108 @@ section,dialog{scroll-margin-top:64px}
   steps.forEach(s=>io.observe(s));
 })();
 
+/* ---------- Language EN / ES ---------- */
+const ES={
+"Open to roles & freelance":"Disponible para empleo y freelance","What I do":"Qué hago","Work":"Proyectos","About":"Sobre mí","Let's talk":"Hablemos",
+"Brand · Ads · Motion · Data · Leadership ·":"Marca · Ads · Motion · Datos · Liderazgo ·",
+"San Salvador · Remote · Available worldwide":"San Salvador · Remoto · Disponible a nivel global",
+"Creative that":"Creatividad que","performs.":"rinde.",
+"Growth Marketing & Creative Specialist.":"Especialista en Growth Marketing y Creatividad.",
+"I design the brand, build the ad, run it on Google and Meta, read the numbers and lead the team that ships it. Marketing graduate (UCA), co-founder of VOOST, and supervisor of ad operations for U.S. travel and fintech accounts.":"Diseño la marca, creo el anuncio, lo pauto en Google y Meta, leo los números y lidero al equipo que lo ejecuta. Licenciado en Mercadeo (UCA), cofundador de VOOST y supervisor de operaciones de pauta para cuentas de viajes y fintech de EE. UU.",
+"See the work →":"Ver proyectos →","Get in touch":"Contáctame",
+"people led across two lines of business":"personas lideradas en dos líneas de negocio","headcount scaled on a brand-new account":"de headcount en una cuenta nueva","promoted in under 3 years":"ascensos en menos de 3 años","years in marketing operations":"años en operaciones de marketing",
+"Selected work":"Proyectos","All projects.":"Todos los proyectos.",
+"Open any project to see every piece and the story behind it: the problem, what I did and what changed.":"Abre cualquier proyecto para ver todas las piezas y la historia detrás: el problema, lo que hice y lo que cambió.",
+"All":"Todos","Google & Meta Ads":"Google & Meta Ads","Brand design":"Diseño de marca","Posts & motion":"Posts y motion","Data & info design":"Datos y diseño de información",
+"Start a project like this →":"Quiero un proyecto así →",
+"How I work":"Cómo trabajo","From brief to ROAS.":"Del brief al ROAS.",
+"The same loop I ran with teams supporting U.S. marketing operations, now applied to every campaign.":"El mismo ciclo que apliqué con equipos de operaciones de marketing para EE. UU., ahora en cada campaña.",
+"Step 1":"Paso 1","Step 2":"Paso 2","Step 3":"Paso 3","Step 4":"Paso 4","Diagnose":"Diagnosticar","Create":"Crear","Launch":"Lanzar","Optimize":"Optimizar",
+"Read the funnel by stage and find the metric that is really breaking.":"Leo el embudo por etapa y encuentro la métrica que de verdad está fallando.",
+"Design hooks and visuals for the audience's real pain points, per platform.":"Diseño ganchos y visuales para los dolores reales de la audiencia, por plataforma.",
+"Set up, traffic and QA the campaign on Google and Meta.":"Configuro, cargo y reviso la campaña en Google y Meta.",
+"Test, move budget to winners and report it in a dashboard anyone can read.":"Pruebo, muevo presupuesto a lo que funciona y lo reporto en un dashboard que cualquiera entiende.",
+"I'm Joshua, a marketer who designs.":"Soy Joshua, un mercadólogo que diseña.",
+"I started in social media sales, grew into leading 20+ people, and today co-run VOOST while supervising ad operations. I'm proactive, clear when I communicate, and I turn data into actions a team can follow.":"Empecé en ventas por redes sociales, crecí hasta liderar a más de 20 personas y hoy dirijo VOOST mientras superviso operaciones de pauta. Soy proactivo, claro al comunicar y convierto datos en acciones que un equipo puede seguir.",
+"Co-founder, VOOST":"Cofundador, VOOST","Creative and growth agency.":"Agencia creativa y de crecimiento.",
+"Apr 2026 – Sep 2026":"Abr 2026 – Sep 2026","Nov 2025 – Mar 2026":"Nov 2025 – Mar 2026","Mar 2021 – Sep 2025":"Mar 2021 – Sep 2025","Jan 2021 – Mar 2021":"Ene 2021 – Mar 2021",
+"Supervisor, Digital Marketing · EMAYA Services":"Supervisor de Marketing Digital · EMAYA Services",
+"Led 5+ Ad Ops agents and campaign managers for a major U.S. online travel brand: Google Ads setup, creative deployment, billing cycles.":"Lideré a más de 5 agentes de Ad Ops y campaign managers para una gran marca de viajes en línea de EE. UU.: configuración en Google Ads, despliegue de creativos y ciclos de facturación.",
+"Case Specialist · Blackhawk Network":"Especialista de Casos · Blackhawk Network",
+"Resolved Visa and Mastercard discrepancy cases during U.S. holiday peak.":"Resolví casos de discrepancias de Visa y Mastercard durante la temporada alta de fiestas en EE. UU.",
+"Agent → Team Lead → Supervisor · Glass Mountain":"Agente → Team Lead → Supervisor · Glass Mountain",
+"Built a new account from 0 to 40+ headcount. SOPs, QA and KPI frameworks, incentives and hiring.":"Construí una cuenta nueva de 0 a más de 40 personas. SOPs, marcos de QA y KPIs, incentivos y contratación.",
+"Senior Agent, Social Media · English4CallCenter":"Agente Senior de Redes Sociales · English4CallCenter",
+"Booked demo classes as the core sales strategy.":"Agendé clases demo como estrategia principal de ventas.",
+"Recognition & education":"Reconocimientos y formación","Proof, not adjectives.":"Pruebas, no adjetivos.",
+"Certificates and programs that back up how I work.":"Certificados y programas que respaldan cómo trabajo.",
+"The team I led":"El equipo que lideré","Award night with leadership":"Noche de premiación con liderazgo",
+"Leadership":"Liderazgo","Results come from people.":"Los resultados vienen de las personas.",
+"I built a team from zero to 40+ people, coached them with data instead of opinions, and celebrated the wins together. The recognition below came from that work.":"Construí un equipo de cero a más de 40 personas, los guié con datos y no con opiniones, y celebramos juntos cada logro. Los reconocimientos de abajo vienen de ese trabajo.",
+"Awarded by the Country Director and the Executive Vice President for progressive leadership growth and operational excellence on the FORTH account.":"Otorgado por la Directora de País y el Vicepresidente Ejecutivo por crecimiento progresivo en liderazgo y excelencia operativa en la cuenta FORTH.",
+"April 2026 · Google":"Abril 2026 · Google",
+"Google certification in ad trafficking, campaign optimization and delivery against business goals.":"Certificación de Google en tráfico de anuncios, optimización de campañas y entrega según objetivos de negocio.",
+"Gloria de Kriete Scholarship":"Beca Gloria de Kriete",
+"Programa Oportunidades for outstanding students; earned a full university scholarship.":"Programa Oportunidades para estudiantes destacados; obtuve beca universitaria completa.",
+"Marketing degree":"Licenciatura en Mercadeo",
+"Universidad Centroamericana José Simeón Cañas. Plus Graphic Design and Digital Marketing training.":"Universidad Centroamericana José Simeón Cañas. Además, formación en Diseño Gráfico y Marketing Digital.",
+"Contact":"Contacto","Need creative that":"¿Necesitas creatividad que","sells?":"venda?",
+"I'm available for in-house roles in digital marketing and for freelance campaigns. Tell me what you're launching.":"Estoy disponible para puestos in-house de marketing digital y para campañas freelance. Cuéntame qué vas a lanzar.",
+"Copy":"Copiar","Copied":"Copiado",
+/* dynamic */
+"What I do · ":"Qué hago · ","Ads that pay for themselves.":"Anuncios que se pagan solos.",
+"I set up, traffic and optimize campaigns on Google and Meta, and design the creative that runs in them. When numbers drop, I find the stage that is breaking and fix it.":"Configuro, cargo y optimizo campañas en Google y Meta, y diseño los creativos que corren en ellas. Cuando los números caen, encuentro la etapa que falla y la arreglo.",
+"Reporting":"Reportes","Ads & performance":"Ads y performance","See more ads work":"Ver más de ads",
+"Brands people remember.":"Marcas que la gente recuerda.",
+"Logos, color, type and the manual that holds it together, applied where the business actually lives: vans, uniforms, packaging and social.":"Logos, color, tipografía y el manual que los une, aplicados donde vive el negocio: vehículos, uniformes, empaques y redes.",
+"Identity":"Identidad","Brand manual":"Manual de marca","Applications":"Aplicaciones","See more brand work":"Ver más de marca",
+"Posts that stop the scroll.":"Posts que detienen el scroll.",
+"Social posts, carousels and short motion pieces built for Reels and Stories, with one clear message per piece and a call to action you can see.":"Posts, carruseles y piezas cortas de motion para Reels y Stories, con un mensaje claro por pieza y un llamado a la acción visible.",
+"Social posts":"Posts","Carousels":"Carruseles","Motion":"Motion","See more posts":"Ver más posts",
+"Data anyone can read.":"Datos que cualquiera entiende.",
+"Dashboards and visual guides that turn raw numbers and complex processes into decisions a team can act on the same day.":"Dashboards y guías visuales que convierten números y procesos complejos en decisiones que un equipo aplica el mismo día.",
+"Dashboards":"Dashboards","Training guides":"Guías de capacitación","KPIs":"KPIs","Data & dashboards":"Datos y dashboards","See more data work":"Ver más de datos",
+"Challenge":"Reto","Solution":"Solución","Result":"Resultado","Open":"Abrir","pieces":"piezas","piece":"pieza","Show ":"Ver ",
+"Google Ads · Meta Ads · Team leadership":"Google Ads · Meta Ads · Liderazgo de equipo","Role: Supervisor":"Rol: Supervisor","5 agents + 2 campaign managers":"5 agentes + 2 campaign managers","30-60-90 days":"30-60-90 días",
+"Performance fell at every stage of the funnel: CTR 3.8% → 1.9%, CPL $28 → $62, ROAS 3.5× → 1.4×. The team was also resisting feedback.":"El rendimiento cayó en todas las etapas del embudo: CTR 3.8% → 1.9%, CPL $28 → $62, ROAS 3.5× → 1.4×. Además, el equipo se resistía al feedback.",
+"Diagnosed by stage (attention, traffic, conversion) and found weak hooks, saturated audiences and an ad-to-landing mismatch. Paused losers, moved budget to winners, refreshed creative every 2–3 weeks, and gave the team role KPIs, weekly 1:1s and an accountability matrix.":"Diagnostiqué por etapa (atención, tráfico, conversión) y encontré ganchos débiles, audiencias saturadas y desconexión entre anuncio y landing. Pausé lo que no funcionaba, moví presupuesto a lo que sí, renové creativos cada 2–3 semanas y le di al equipo KPIs por rol, 1:1 semanales y una matriz de responsabilidades.",
+"Paid social · Lead generation":"Pauta en redes · Generación de leads","U.S. market":"Mercado de EE. UU.","Static ads":"Anuncios estáticos",
+"Generate roofing and repair leads from homeowners who compare price before they call.":"Generar leads de techos y reparaciones entre propietarios que comparan precios antes de llamar.",
+"One message per ad (financing, speed, durability), a bold offer, a visible call to action and a Spanish-language variant for Hispanic homeowners.":"Un mensaje por anuncio (financiamiento, rapidez, durabilidad), una oferta clara, un llamado a la acción visible y una versión en español para propietarios hispanos.",
+"Brand identity · Illustration":"Identidad de marca · Ilustración","Logo":"Logo","Pattern system":"Sistema de patrones",
+"Give a small Salvadoran town a brand that honors its traditions and still feels current to younger visitors.":"Darle a un pueblo salvadoreño una marca que honre sus tradiciones y se sienta actual para visitantes jóvenes.",
+"An illustrated wordmark built from local folk-art patterns, a hand-lettered secondary type, an icon set drawn from local crafts and nature, and the line “Lo nuestro también es tendencia”.":"Un logotipo ilustrado con patrones de arte popular local, una tipografía secundaria manuscrita, íconos inspirados en artesanías y naturaleza, y el lema “Lo nuestro también es tendencia”.",
+"Brand identity · Commercial design":"Identidad de marca · Diseño comercial","HVAC services":"Servicios de aire acondicionado","Fleet & uniform":"Flota y uniformes",
+"An air-conditioning maintenance and repair company needed to look reliable and professional on the street and online.":"Una empresa de mantenimiento y reparación de aire acondicionado necesitaba verse confiable y profesional en la calle y en línea.",
+"A mark that merges a water drop with a cool-air swirl, a blue palette for freshness and trust, a type system, and applications on vans, uniforms, cards and social.":"Una marca que une una gota con un remolino de aire frío, una paleta azul de frescura y confianza, un sistema tipográfico y aplicaciones en vehículos, uniformes, tarjetas y redes.",
+"Training guides":"Guías de capacitación","Information design":"Diseño de información","Fintech operations":"Operaciones fintech","Step-by-step guides":"Guías paso a paso","Call flows":"Flujos de llamada",
+"A team growing from zero to 40+ people had to learn complex payment processes quickly and without errors.":"Un equipo que creció de cero a más de 40 personas tenía que aprender procesos de pago complejos rápido y sin errores.",
+"Visual step-by-step guides, call flows and a transactions map that new hires could follow on their own.":"Guías visuales paso a paso, flujos de llamada y un mapa de transacciones que el personal nuevo podía seguir por su cuenta.",
+"KPI dashboards":"Dashboards de KPIs","Data & reporting":"Datos y reportes","Real time":"Tiempo real","Team KPIs":"KPIs del equipo",
+"Supervisors needed to see team performance during the day, not in a report a week later.":"Los supervisores necesitaban ver el rendimiento del equipo durante el día, no en un reporte una semana después.",
+"Live dashboards that pull from the daily tracker and flag who needs coaching, with client data kept private.":"Dashboards en vivo que toman datos del tracker diario y señalan quién necesita coaching, cuidando la privacidad de los datos del cliente."
+};
+let LANG='en';
+const tr=s=>LANG==='es'&&ES[s]?ES[s]:s;
+const ORIG=new WeakMap();
+function translateStatic(){
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const pe=n.parentElement;if(!pe||pe.closest('script,style,.name,#grid,#s-cards,.show-text,#proj,.copy small'))return 2;return n.textContent.trim()?1:2}});
+  let n;while(n=w.nextNode()){
+    if(!ORIG.has(n))ORIG.set(n,n.textContent);
+    const o=ORIG.get(n),k=o.trim().replace(/\s+/g,' ');
+    const lead=o.match(/^\s*/)[0],trail=o.match(/\s*$/)[0];
+    n.textContent=lead+tr(k)+trail;
+  }
+}
+const langHooks=[()=>document.querySelectorAll('.copy small').forEach(x=>x.textContent=tr('Copy'))];
+function setLang(l){
+  LANG=l;document.documentElement.lang=l;
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+  translateStatic();langHooks.forEach(f=>f());
+  try{localStorage.setItem('jb-lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
 /* ---------- Data ---------- */
 const SLIDES=[
  {key:'ads',eye:'Google & Meta Ads',title:'Ads that pay for themselves.',desc:'I set up, traffic and optimize campaigns on Google and Meta, and design the creative that runs in them. When numbers drop, I find the stage that is breaking and fix it.',tags:['Google Ads','Meta Ads','Reporting'],card:'Ads & performance',more:'See more ads work'},
@@ -563,9 +709,14 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Work grid + filters ---------- */
 const grid=document.getElementById('grid');
-grid.innerHTML=PROJECTS.map(p=>`<button class="tile" data-id="${p.id}" data-tags="${p.tags.join(' ')}">
-  <div class="cv"><img src="${p.cover}" alt="" loading="lazy"><b>Open · ${p.imgs.length} ${p.imgs.length>1?'pieces':'piece'}</b></div>
-  <h3>${p.title}</h3><p>${p.eye}</p></button>`).join('');
+function renderGrid(){
+  const f=(document.querySelector('.filters button[aria-pressed="true"]')||{}).dataset;
+  grid.innerHTML=PROJECTS.map(p=>`<button class="tile" data-id="${p.id}" data-tags="${p.tags.join(' ')}">
+  <div class="cv"><img src="${p.cover}" alt="" loading="lazy"><b>${tr('Open')} · ${p.imgs.length} ${tr(p.imgs.length>1?'pieces':'piece')}</b></div>
+  <h3>${tr(p.title)}</h3><p>${tr(p.eye)}</p></button>`).join('');
+  if(f&&f.f)filterWork(f.f);
+}
+renderGrid();langHooks.push(renderGrid);
 function filterWork(f){
   document.querySelectorAll('.filters button').forEach(o=>o.setAttribute('aria-pressed',o.dataset.f===f));
   grid.querySelectorAll('.tile').forEach(t=>{t.hidden=!(f==='all'||t.dataset.tags.split(' ').includes(f))});
@@ -576,10 +727,10 @@ document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('clic
 const dlg=document.getElementById('proj');
 function openProject(id){
   const p=PROJECTS.find(x=>x.id===id);if(!p)return;
-  document.getElementById('pj-eye').textContent=p.eye;
-  document.getElementById('pj-title').textContent=p.title;
-  document.getElementById('pj-meta').innerHTML=p.meta.map(m=>`<span>${m}</span>`).join('');
-  document.getElementById('pj-csr').innerHTML=[['Challenge',p.challenge],['Solution',p.solution],['Result',p.result]].filter(r=>r[1]).map(r=>`<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('');
+  document.getElementById('pj-eye').textContent=tr(p.eye);
+  document.getElementById('pj-title').textContent=tr(p.title);
+  document.getElementById('pj-meta').innerHTML=p.meta.map(m=>`<span>${tr(m)}</span>`).join('');
+  document.getElementById('pj-csr').innerHTML=[['Challenge',p.challenge],['Solution',p.solution],['Result',p.result]].filter(r=>r[1]).map(r=>`<div><dt>${tr(r[0])}</dt><dd>${tr(r[1])}</dd></div>`).join('');
   document.getElementById('pj-imgs').innerHTML=p.imgs.map(n=>`<img src="work/p${pad(n)}.jpg" alt="${p.title}, piece" loading="lazy">`).join('');
   if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
   dlg.scrollTop=0;
@@ -597,12 +748,12 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
   const DUR=6500;let cur=0,t0=performance.now(),paused=false,visible=true,busy=false;
   function renderCards(){
     const order=[1,2,3].map(k=>(cur+k)%SLIDES.length);
-    cards.innerHTML=order.map(i=>`<button class="scard" data-i="${i}" aria-label="Show ${SLIDES[i].card}"><img src="cards/${SLIDES[i].key}.jpg" alt=""><span>${SLIDES[i].card}</span></button>`).join('');
+    cards.innerHTML=order.map(i=>`<button class="scard" data-i="${i}" aria-label="${tr('Show ')}${tr(SLIDES[i].card)}"><img src="cards/${SLIDES[i].key}.jpg" alt=""><span>${tr(SLIDES[i].card)}</span></button>`).join('');
   }
   function setText(s){
-    $('s-eye').textContent='What I do · '+s.eye;$('s-title').textContent=s.title;$('s-desc').textContent=s.desc;
-    $('s-tags').innerHTML=s.tags.map(x=>`<li>${x}</li>`).join('');
-    const m=$('s-more');m.textContent=s.more+' →';m.dataset.f=s.key;
+    $('s-eye').textContent=tr('What I do · ')+tr(s.eye);$('s-title').textContent=tr(s.title);$('s-desc').textContent=tr(s.desc);
+    $('s-tags').innerHTML=s.tags.map(x=>`<li>${tr(x)}</li>`).join('');
+    const m=$('s-more');m.textContent=tr(s.more)+' →';m.dataset.f=s.key;
     $('s-idx').textContent=pad(cur+1);
   }
   function go(i,fromCard){
@@ -633,7 +784,7 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
   let sx=null;sec.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
   sec.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)go((cur+(dx<0?1:-1)+SLIDES.length)%SLIDES.length);sx=null});
   if('IntersectionObserver' in window)new IntersectionObserver(es=>{visible=es[0].isIntersecting}).observe(sec);
-  renderCards();
+  renderCards();langHooks.push(()=>{setText(SLIDES[cur]);renderCards()});
   function tick(now){
     if(paused||!visible||document.hidden||dlg.open){t0=now-(parseFloat(bar.style.width)||0)/100*DUR}
     const k=Math.min(1,(now-t0)/DUR);bar.style.width=(k*100)+'%';
@@ -656,9 +807,12 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 /* Copy buttons */
 document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
   const s=b.querySelector('small');
-  const done=()=>{s.textContent='Copied';setTimeout(()=>s.textContent='Copy',1600)};
+  const done=()=>{s.textContent=tr('Copied');setTimeout(()=>s.textContent=tr('Copy'),1600)};
   try{navigator.clipboard.writeText(b.dataset.v).then(done,()=>{getSelection().selectAllChildren(b)})}catch(e){getSelection().selectAllChildren(b)}
 }));
+
+/* Initial language */
+(function(){let l=null;try{l=localStorage.getItem('jb-lang')}catch(e){}if(!l)l=(navigator.language||'en').toLowerCase().startsWith('es')?'es':'en';if(l==='es')setLang('es')})();
 </script>
 
 </body>
