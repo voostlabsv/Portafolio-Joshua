@@ -408,6 +408,38 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 .cimg.emblem b{font-weight:600;font-size:30px;letter-spacing:-.03em}
 .cimg.emblem small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8fa7e8}
 
+
+/* ===== v5 ===== */
+.name .ch{transition:none}
+.s-label{display:flex;align-items:center;gap:14px;margin:0;font:300 clamp(22px,2.4vw,34px)/1 var(--display);letter-spacing:-.02em;color:#dfe5f1}
+.s-line{display:block;width:44px;height:1px;background:linear-gradient(90deg,var(--accent-2),transparent);transform-origin:left;animation:lineGrow 6.5s linear infinite}
+@keyframes lineGrow{0%{transform:scaleX(.15);opacity:.5}12%{transform:scaleX(1);opacity:1}88%{transform:scaleX(1);opacity:1}100%{transform:scaleX(.15);opacity:.5}}
+.s-count{font:400 13px var(--body);color:var(--muted);letter-spacing:.06em;margin-left:4px;font-variant-numeric:tabular-nums}
+.show-text h2{background:linear-gradient(90deg,#fff 0%,#fff 55%,#9db8ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (prefers-reduced-motion:reduce){.s-line{animation:none}}
+/* Beyond design */
+.beyond{margin-top:clamp(64px,9vw,112px);display:flex;flex-direction:column;gap:32px}
+.by-head h3{font-size:clamp(28px,3.6vw,48px);margin-top:12px;line-height:1.08}
+.by-head h3 span{font-weight:300;color:#9fb3e6}
+.by-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.by-grid{grid-template-columns:1fr}}
+.by-c{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px;transition:background .3s,transform .3s}
+.by-c:hover{background:rgba(255,255,255,.06);transform:translateY(-4px)}
+.by-c h4{font:600 19px var(--display);letter-spacing:-.02em;margin:8px 0 0}
+.by-c p{color:var(--muted);font-size:15px}
+.by-ic{width:52px;height:52px;border-radius:14px;background:rgba(91,139,255,.12);display:flex;align-items:center;justify-content:center}
+.by-ic svg{width:30px;height:30px;fill:none;stroke:#9db8ff;stroke-width:1.6}
+.by-ic.web{flex-direction:column;align-items:stretch;justify-content:center;gap:4px;padding:12px}
+.by-ic.web i{display:block;height:4px;border-radius:3px;background:#9db8ff;transform-origin:left;animation:webBar 2.8s ease-in-out infinite}
+.by-ic.web i:nth-child(2){width:70%;animation-delay:.25s;opacity:.7}.by-ic.web i:nth-child(3){width:45%;animation-delay:.5s;opacity:.45}
+@keyframes webBar{0%,100%{transform:scaleX(.3)}50%{transform:scaleX(1)}}
+.by-ic.play svg path{fill:#9db8ff;stroke:none;transform-origin:20px 20px;animation:pulseP 2.4s ease-in-out infinite}
+@keyframes pulseP{0%,100%{transform:scale(1)}50%{transform:scale(.82)}}
+.by-ic.ai circle{fill:#9db8ff;stroke:none;animation:node 2.6s ease-in-out infinite}
+.by-ic.ai circle:nth-child(2){animation-delay:.3s}.by-ic.ai circle:nth-child(3){animation-delay:.6s}.by-ic.ai circle:nth-child(4){animation-delay:.9s}.by-ic.ai circle:nth-child(5){animation-delay:1.2s}
+@keyframes node{0%,100%{opacity:.35}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.by-ic *{animation:none!important}}
+
 /* Scroll-driven reveals: visible at rest; animate only where supported */
 @supports (animation-timeline: view()){
   @media (prefers-reduced-motion:no-preference){
@@ -464,7 +496,7 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
   </div>
   <div class="wrap show-in">
     <div class="show-text" aria-live="polite">
-      <span class="eyebrow" id="s-eye">What I do</span>
+      <p class="s-label" id="s-eye"><span class="s-line" aria-hidden="true"></span><span class="s-lt">What I do</span><span class="s-count" id="s-count" aria-hidden="true">01 / 04</span></p>
       <h2 id="s-title">Google &amp; Meta Ads</h2>
       <p id="s-desc">Campaigns built, launched and optimized end to end.</p>
       <ul class="show-tags" id="s-tags"><li>Google Ads</li><li>Meta Ads</li><li>Reporting</li></ul>
@@ -560,10 +592,10 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
     <div class="sk-head"><span class="eyebrow">Skills</span></div>
     <div class="sk-grid">
       <div class="bars">
-        <div class="bar-i" style="--v:95"><div class="bl"><span class="lgs"><svg class="lg lg-o" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5S9.4 5.3 12 2.5z"/></svg></span><span>English</span><b>95%</b></div><div class="bt"><i></i></div></div>
         <div class="bar-i" style="--v:88"><div class="bl"><span class="lgs"><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg></span><span>Google Ads &amp; Meta Ads</span><b>88%</b></div><div class="bt"><i></i></div></div>
-        <div class="bar-i" style="--v:91"><div class="bl"><span class="lgs"><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg></span><span>Generative AI · photo &amp; video</span><b>91%</b></div><div class="bt"><i></i></div></div>
+        <div class="bar-i" style="--v:95"><div class="bl"><span class="lgs"><svg class="lg lg-o" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5S9.4 5.3 12 2.5z"/></svg></span><span>English</span><b>95%</b></div><div class="bt"><i></i></div></div>
         <div class="bar-i" style="--v:87"><div class="bl"><span class="lgs"><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.962 7.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z"/></svg><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2-.26 0-.49 0-.68.01-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03.01-.31-.07-.62-.23-.89-.17-.26-.41-.46-.7-.57zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.899c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.391 11.65c-.399.56-.959.98-1.609 1.22-.68.25-1.43.34-2.25.34-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11.17 0 .33 0 .56-.01.24-.01.49-.01.76-.02s.56-.01.87-.02c.31-.01.61-.01.91-.01.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.149.42.229.85.229 1.3.001.86-.199 1.57-.6 2.13zm7.091 3.89c-.28.4-.671.709-1.12.891-.49.209-1.09.318-1.811.318-.459 0-.91-.039-1.359-.129-.35-.061-.7-.17-1.02-.32-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09.029-.02.06-.01.09.01.39.23.8.391 1.24.49.379.1.779.15 1.18.15.38 0 .65-.051.83-.141.16-.07.27-.24.27-.42 0-.141-.08-.27-.24-.4-.16-.129-.489-.279-.979-.471-.51-.18-.979-.42-1.42-.719-.31-.221-.569-.51-.761-.85-.159-.32-.239-.67-.229-1.021 0-.43.12-.84.341-1.21.25-.4.619-.72 1.049-.92.469-.239 1.059-.349 1.769-.349.41 0 .83.03 1.24.09.3.04.59.12.86.23.039.01.08.05.1.09.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1-.09.02-.14.02-.18 0-.3-.16-.62-.27-.96-.34-.37-.08-.74-.13-1.12-.13-.2-.01-.41.02-.601.07-.129.03-.24.1-.31.2-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27.229.12.47.23.709.33.541.18 1.061.43 1.541.73.33.209.6.49.789.83.16.318.24.67.23 1.029.011.471-.129.94-.389 1.331z"/></svg></span><span>Design · Canva &amp; Photoshop</span><b>87%</b></div><div class="bt"><i></i></div></div>
+        <div class="bar-i" style="--v:91"><div class="bl"><span class="lgs"><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg></span><span>Generative AI · photo &amp; video</span><b>91%</b></div><div class="bt"><i></i></div></div>
         <div class="bar-i" style="--v:92"><div class="bl"><span class="lgs"><svg class="lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2h9.5v9.5H2zM12.5 2H22v9.5h-9.5zM2 12.5h9.5V22H2zM12.5 12.5H22V22h-9.5z"/></svg></span><span>Microsoft Office</span><b>92%</b></div><div class="bt"><i></i></div></div>
       </div>
       <div class="rings">
@@ -572,6 +604,30 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
         <div class="ring" style="--v:90"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="rv-c" cx="60" cy="60" r="52"/></svg><b>90%</b><span>Communication</span></div>
         <div class="ring" style="--v:90"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="rv-c" cx="60" cy="60" r="52"/></svg><b>90%</b><span>Leadership</span></div>
       </div>
+    </div>
+  </div>
+
+  <div class="wrap beyond rv" id="beyond">
+    <div class="by-head">
+      <span class="eyebrow">Beyond design</span>
+      <h3>I don't just design it.<br><span>I build it, animate it and plug AI into it.</span></h3>
+    </div>
+    <div class="by-grid">
+      <article class="by-c">
+        <div class="by-ic web" aria-hidden="true"><i></i><i></i><i></i></div>
+        <h4>Animated, functional websites</h4>
+        <p>Landing pages and sites that move, load fast and convert. Like the one you're on.</p>
+      </article>
+      <article class="by-c">
+        <div class="by-ic play" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><path d="M16 13l11 7-11 7z"/></svg></div>
+        <h4>Motion graphics &amp; video</h4>
+        <p>Quality motion and audiovisual pieces, planned inside a creative strategy, not just edited.</p>
+      </article>
+      <article class="by-c">
+        <div class="by-ic ai" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="8" cy="12" r="3"/><circle cx="8" cy="28" r="3"/><circle cx="20" cy="20" r="4"/><circle cx="32" cy="10" r="3"/><circle cx="32" cy="30" r="3"/><path d="M11 13l5 5M11 27l5-5M24 18l5-6M24 22l5 6"/></svg></div>
+        <h4>AI built into marketing</h4>
+        <p>Beyond generating images: I use AI to build digital assets, automations and tools that give businesses real impact.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -644,11 +700,28 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 
 <script>
 
-/* Hero name: split into letters with stagger */
-document.querySelectorAll('.name .w').forEach((w,wi)=>{
-  const t=w.textContent;w.textContent='';
-  [...t].forEach((c,i)=>{const sp=document.createElement('span');sp.className='ch';sp.textContent=c;sp.style.animationDelay=(wi*0.18+i*0.04)+'s';sp.setAttribute('aria-hidden','true');if(wi===1){const k=i/(t.length-1);sp.style.color=`rgb(${Math.round(245-118*k)},${Math.round(245-81*k)},255)`}w.appendChild(sp)});
-});
+/* Hero name: split into letters with stagger, blue glow that follows the cursor (only over the name) */
+(function(){
+  const name=document.querySelector('.name');if(!name)return;
+  const chars=[];
+  name.querySelectorAll('.w').forEach((w,wi)=>{
+    const t=w.textContent;w.textContent='';
+    [...t].forEach((c,i)=>{const sp=document.createElement('span');sp.className='ch';sp.textContent=c;sp.style.animationDelay=(wi*0.18+i*0.04)+'s';sp.setAttribute('aria-hidden','true');w.appendChild(sp);
+      // resting blue: only on the second word, stronger toward the right
+      const rest=wi===1?Math.pow(i/(t.length-1),1.15):0;chars.push({el:sp,rest,cur:rest,target:rest})});
+  });
+  function paint(c){const b=c.cur;const r=Math.round(245-150*b),g=Math.round(245-108*b),a=(1-.16*b).toFixed(3);c.el.style.color=`rgba(${r},${g},255,${a})`;c.el.style.textShadow=b>.05?`0 0 ${Math.round(28*b)}px rgba(91,139,255,${(.35*b).toFixed(3)})`:'none'}
+  chars.forEach(paint);
+  let raf=null;
+  function loop(){let moving=false;chars.forEach(c=>{const d=c.target-c.cur;if(Math.abs(d)>.004){c.cur+=d*.14;moving=true}else c.cur=c.target;paint(c)});raf=moving?requestAnimationFrame(loop):null}
+  const kick=()=>{if(!raf)raf=requestAnimationFrame(loop)};
+  if(matchMedia('(hover: hover)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    name.addEventListener('pointermove',e=>{
+      chars.forEach(c=>{const r=c.el.getBoundingClientRect();const dx=(r.left+r.width/2-e.clientX)/Math.max(160,innerWidth*.16),dy=(r.top+r.height/2-e.clientY)/Math.max(160,innerWidth*.16);c.target=Math.max(0,Math.min(1,Math.exp(-(dx*dx+dy*dy)*1.6)))});kick();
+    });
+    name.addEventListener('pointerleave',()=>{chars.forEach(c=>c.target=c.rest);kick()});
+  }
+})();
 
 /* Intro: background wall becomes visible as you scroll toward the showcase */
 (function(){
@@ -679,6 +752,10 @@ document.querySelectorAll('.name .w').forEach((w,wi)=>{
 
 /* ---------- Language EN / ES ---------- */
 const ES={
+"Beyond design":"Más allá del diseño","I don't just design it.":"No solo lo diseño.","I build it, animate it and plug AI into it.":"Lo construyo, lo animo y le integro IA.",
+"Animated, functional websites":"Sitios web animados y funcionales","Landing pages and sites that move, load fast and convert. Like the one you're on.":"Landing pages y sitios que se mueven, cargan rápido y convierten. Como este en el que estás.",
+"Motion graphics & video":"Motion graphics y video","Quality motion and audiovisual pieces, planned inside a creative strategy, not just edited.":"Piezas de motion y audiovisuales de calidad, pensadas dentro de una estrategia creativa, no solo editadas.",
+"AI built into marketing":"IA integrada al marketing","Beyond generating images: I use AI to build digital assets, automations and tools that give businesses real impact.":"Más allá de generar imágenes: uso IA para crear activos digitales, automatizaciones y herramientas que generan impacto real en las empresas.",
 "Available":"Disponible","El Salvador · Remote":"El Salvador · Remoto","What I do":"Qué hago",
 "Campaigns built, launched and optimized end to end.":"Campañas creadas, lanzadas y optimizadas de principio a fin.",
 "Identities and brand systems that work in the real world.":"Identidades y sistemas de marca que funcionan en el mundo real.",
@@ -875,7 +952,7 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
     cards.innerHTML=order.map(i=>`<button class="scard" data-i="${i}" aria-label="${tr('Show ')}${tr(SLIDES[i].card)}"><img src="cards/${SLIDES[i].key}.jpg" alt=""><span>${tr(SLIDES[i].card)}</span></button>`).join('');
   }
   function setText(s){
-    $('s-eye').textContent=tr('What I do');$('s-title').textContent=tr(s.eye);$('s-desc').textContent=tr(s.desc);
+    $('s-eye').querySelector('.s-lt').textContent=tr('What I do');$('s-count').textContent=pad(cur+1)+' / '+pad(SLIDES.length);$('s-title').textContent=tr(s.eye);$('s-desc').textContent=tr(s.desc);
     $('s-tags').innerHTML=s.tags.map(x=>`<li>${tr(x)}</li>`).join('');
     const m=$('s-more');m.textContent=tr(s.more)+' →';m.dataset.f=s.key;
     $('s-idx').textContent=pad(cur+1);
