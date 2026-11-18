@@ -409,29 +409,17 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 .s-count{font:400 13px var(--body);color:var(--muted);letter-spacing:.06em;margin-left:4px;font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:reduce){.s-line{animation:none}}
 /* How I work (thinking + doing) */
-.approach{--orange:#ff8a3d;--ob:linear-gradient(100deg,var(--orange),#ff6a5c 35%,var(--accent) 100%);position:relative;overflow:hidden;background:radial-gradient(60% 50% at 0% 0%,rgba(255,138,61,.10),transparent 70%),radial-gradient(55% 55% at 100% 100%,rgba(61,116,255,.12),transparent 70%),var(--bg-2);border-block:1px solid var(--line)}
-.approach .eyebrow{color:var(--orange)}
-.approach h2 span{font-weight:300;background:var(--ob);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:obShift 8s ease-in-out infinite alternate}
-@keyframes obShift{from{background-position:0% 50%}to{background-position:100% 50%}}
-.ap-col{position:relative}
-.ap-col::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,138,61,.45),rgba(255,255,255,.04) 40%,rgba(61,116,255,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.ap-steps .step::before{background:var(--ob)}
-.ap-steps .step b::before{color:var(--orange)}
-.ap-do .by-ic{background:linear-gradient(135deg,rgba(255,138,61,.20),rgba(61,116,255,.20));box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;animation:icFloat 4.2s ease-in-out infinite}
+.approach{background:#000;border-block:1px solid var(--line)}
+.approach h2 span{font-weight:300;color:#a1a1a6}
+.ap-do .by-ic{animation:icFloat 4.2s ease-in-out infinite}
 .ap-do li:nth-child(2) .by-ic{animation-delay:-1.4s}.ap-do li:nth-child(3) .by-ic{animation-delay:-2.8s}
-@keyframes icFloat{0%,100%{transform:translateY(0);box-shadow:0 0 0 1px rgba(255,255,255,.06) inset,0 0 0 rgba(255,138,61,0)}50%{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 10px 26px -10px rgba(255,138,61,.55)}}
-.ap-do .by-ic.web i{background:linear-gradient(90deg,var(--orange),var(--accent-2))}
-.ap-do .by-ic svg{stroke:#ffb27d}
-.ap-do .by-ic.play svg path{fill:#ffb27d;animation:pulseP 2.4s ease-in-out infinite}
+@keyframes icFloat{0%,100%{transform:translateY(0);box-shadow:0 0 0 rgba(91,139,255,0)}50%{transform:translateY(-4px);box-shadow:0 10px 26px -10px rgba(91,139,255,.6)}}
 .ap-do .by-ic.play svg circle{stroke-dasharray:80 27;animation:ring 4s linear infinite;transform-origin:20px 20px}
 @keyframes ring{to{transform:rotate(360deg)}}
-.approach .ap-k{background:var(--ob);-webkit-background-clip:text;background-clip:text;color:transparent;width:max-content}
-.ap-do .by-ic.ai svg{stroke:#9db8ff}
-.ap-do .by-ic.ai circle{fill:var(--orange)}
 .ap-do .by-ic.ai svg path{stroke-dasharray:4 3;animation:flow 1.2s linear infinite}
 @keyframes flow{to{stroke-dashoffset:-14}}
-.ap-do li:hover .by-ic{animation-play-state:paused;transform:translateY(-4px) scale(1.06)}
-@media (prefers-reduced-motion:reduce){.approach h2 span,.ap-do .by-ic,.ap-do .by-ic *{animation:none!important}}
+.ap-do li:hover .by-ic{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.ap-do .by-ic,.ap-do .by-ic *{animation:none!important}}
 .ap-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media (max-width:860px){.ap-grid{grid-template-columns:1fr}}
 .ap-col{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:22px;min-width:0}
