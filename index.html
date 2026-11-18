@@ -195,7 +195,12 @@ dialog#proj[open]{animation:pop .35s ease}
 .pj-blk p{color:var(--muted);font-size:15px;line-height:1.55;margin:0}
 .pj-blk h4{margin:0}
 .pj-g{display:grid;gap:12px}
-.pj-g video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#0b0d16;display:block;cursor:pointer}
+.vbox{position:relative;width:100%;height:0;padding-top:177.78%;border-radius:14px;overflow:hidden;background:#0b0d16 center/cover no-repeat;cursor:pointer}
+.vbox video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;background:transparent}
+.vbox .vp{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(5,8,18,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity .25s;pointer-events:none}
+.vbox .vp::after{content:"";position:absolute;left:23px;top:18px;border-style:solid;border-width:11px 0 11px 17px;border-color:transparent transparent transparent #fff}
+.vbox.on .vp{opacity:0}
+@media (max-width:700px){.pj-g.vg{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px 6px;scrollbar-width:none}.pj-g.vg::-webkit-scrollbar{display:none}.pj-g.vg .vbox{flex:0 0 68%;padding-top:0;height:auto;aspect-ratio:auto;scroll-snap-align:start}.pj-g.vg .vbox::before{content:"";display:block;padding-top:177.78%}}
 .pj-g.c2{grid-template-columns:repeat(2,1fr)}.pj-g.c3{grid-template-columns:repeat(3,1fr)}.pj-g.c4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:700px){.pj-g.c3,.pj-g.c4{grid-template-columns:repeat(2,1fr)}.pj-g.c2{grid-template-columns:1fr}}
 .pj-foot{display:flex;justify-content:flex-start}
@@ -1069,19 +1074,24 @@ function openProject(id){
   document.getElementById('pj-title').textContent=tr(p.title);
   document.getElementById('pj-meta').innerHTML=p.meta.map(m=>`<span>${tr(m)}</span>`).join('');
   document.getElementById('pj-csr').innerHTML=[['Challenge',p.challenge],['Solution',p.solution],['Result',p.result]].filter(r=>r[1]).map(r=>`<div><dt>${tr(r[0])}</dt><dd>${tr(r[1])}</dd></div>`).join('');
-  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}">${b.imgs.map(n=>n.endsWith('.mp4')?`<video src="work/${p.dir}/${n}" poster="work/${p.dir}/${n.replace('.mp4','.jpg')}" muted loop playsinline preload="none" aria-label="${p.title}, ${tr(b.h)||'motion'}"></video>`:`<img src="work/${p.dir||'home'}/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
+  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}${b.imgs.some(n=>n.endsWith('.mp4'))?' vg':''}">${b.imgs.map(n=>n.endsWith('.mp4')?`<div class="vbox" style="background-image:url(work/${p.dir}/${n.replace('.mp4','.jpg')})"><video src="work/${p.dir}/${n}" poster="work/${p.dir}/${n.replace('.mp4','.jpg')}" muted loop playsinline webkit-playsinline preload="metadata" aria-label="${p.title}, ${tr(b.h)||'motion'}"></video><span class="vp"></span></div>`:`<img src="work/${p.dir||'home'}/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
     :p.imgs.map(n=>`<img src="work/p${pad(n)}.jpg" alt="${p.title}, piece" loading="lazy">`).join('');
   if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
   dlg.scrollTop=0;
   watchVideos();
 }
-/* motion pieces: play only while visible */
+/* motion pieces: play only while visible (iOS needs muted + playsinline set as properties too) */
 let vio=null;
+function playV(v){v.muted=true;v.defaultMuted=true;v.playsInline=true;const pr=v.play();if(pr&&pr.catch)pr.catch(()=>{})}
 function watchVideos(){
   if(vio)vio.disconnect();
   const vs=[...document.querySelectorAll('#pj-imgs video')];if(!vs.length)return;
-  vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting&&!reduce){v.play().catch(()=>{})}else v.pause()}),{root:dlg,threshold:.35});
-  vs.forEach(v=>{vio.observe(v);v.addEventListener('click',()=>{v.paused?v.play().catch(()=>{}):v.pause()})});
+  vs.forEach(v=>{v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');
+    const box=v.parentNode;v.addEventListener('playing',()=>box.classList.add('on'));v.addEventListener('pause',()=>box.classList.remove('on'));
+    box.addEventListener('click',()=>{v.paused?playV(v):v.pause()})});
+  if(!('IntersectionObserver' in window)){return}
+  vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting&&!reduce)playV(v);else v.pause()}),{threshold:.35});
+  vs.forEach(v=>vio.observe(v));
 }
 dlg.addEventListener('close',()=>{if(vio)vio.disconnect();document.querySelectorAll('#pj-imgs video').forEach(v=>v.pause())});
 grid.addEventListener('click',e=>{const t=e.target.closest('.tile');if(t)openProject(t.dataset.id)});
