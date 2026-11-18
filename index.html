@@ -1006,9 +1006,14 @@ const ES={
 "Onboarding":"Onboarding","A 30-day plan for new agents and six best practices for the leads and buddies who train them.":"Un plan de 30 días para agentes nuevos y seis buenas prácticas para los líderes y buddies que los entrenan.",
 "Compliance basics":"Bases de cumplimiento","Caller verification and data privacy in one page: three questions before any account detail.":"Verificación de identidad y privacidad de datos en una página: tres preguntas antes de dar cualquier dato de la cuenta.",
 "Results analysis":"Análisis de resultados","A monthly report on team performance (tickets, checks, QA, SLA) and a before-and-after look at what changed with the new guides.":"Un reporte mensual del desempeño del equipo (tickets, cheques, QA, SLA) y una comparación de antes y después de las nuevas guías.",
-"KPI dashboards":"Dashboards de KPIs","Data & reporting":"Datos y reportes","Real time":"Tiempo real","Team KPIs":"KPIs del equipo",
+"KPI dashboards":"Dashboards de KPIs","Data & reporting":"Datos y reportes","Real time":"Tiempo real","Team KPIs":"KPIs del equipo","Looker Studio":"Looker Studio","Real live data":"Datos reales en vivo",
 "Supervisors needed to see team performance during the day, not in a report a week later.":"Los supervisores necesitaban ver el rendimiento del equipo durante el día, no en un reporte una semana después.",
-"Live dashboards that pull from the daily tracker and flag who needs coaching, with client data kept private.":"Dashboards en vivo que toman datos del tracker diario y señalan quién necesita coaching, cuidando la privacidad de los datos del cliente."
+"I built the database in Google Sheets and connected it to Looker Studio with real live data: a clean DATA tab that joins every team, calculated fields for SLA and turnaround, and dashboards that refresh every 15 minutes and flag who needs coaching, with client data kept private.":"Armé la base de datos en Google Sheets y la conecté a Looker Studio con datos reales en vivo: una pestaña DATA limpia que une a todos los equipos, campos calculados para SLA y tiempos de respuesta, y dashboards que se actualizan cada 15 minutos y señalan quién necesita coaching, cuidando la privacidad de los datos del cliente.",
+"The weekly report that took about 3 hours to build by hand now updates itself, and leads check the team twice a shift.":"El reporte semanal que tomaba unas 3 horas armar a mano ahora se actualiza solo, y los líderes revisan al equipo dos veces por turno.",
+"How it’s built":"Cómo está armado","From the daily tracker to a clean data tab, a Looker Studio data source and the dashboards each role uses.":"Del tracker diario a una pestaña de datos limpia, una fuente de datos en Looker Studio y los dashboards que usa cada rol.",
+"The database":"La base de datos","One row per task, dropdowns for every status and a protected DATA tab, so the numbers never break.":"Una fila por tarea, listas desplegables para cada estado y una pestaña DATA protegida, para que los números nunca se rompan.",
+"Connecting live data":"Conexión de datos en vivo","Calculated fields for on time, overdue and turnaround, and a Google Sheets connector that refreshes every 15 minutes.":"Campos calculados para a tiempo, atrasado y tiempo de respuesta, y un conector de Google Sheets que se actualiza cada 15 minutos.",
+"Dashboard examples":"Ejemplos de dashboards","A team operations view for leads during the shift, and a QA and SLA view that shows who needs coaching.":"Una vista de operaciones para los líderes durante el turno, y una vista de QA y SLA que muestra quién necesita coaching."
 };
 let LANG='en';
 const tr=s=>LANG==='es'&&ES[s]?ES[s]:s;
@@ -1183,11 +1188,17 @@ const PROJECTS=[
    {k:'05',h:'Compliance basics',p:'Caller verification and data privacy in one page: three questions before any account detail.',imgs:['verification']},
    {k:'06',h:'Results analysis',p:'A monthly report on team performance (tickets, checks, QA, SLA) and a before-and-after look at what changed with the new guides.',imgs:['results-monthly','results-analysis']}
   ],imgs:[]},
- {id:'dash',tags:['data'],title:'KPI dashboards',eye:'Data & reporting',cover:'work/p13.jpg',
-  meta:['Google Sheets','Real time','Team KPIs'],
+ {id:'dash',tags:['data'],title:'KPI dashboards',eye:'Data & reporting',cover:'work/p13.jpg',dir:'dash',
+  meta:['Google Sheets','Looker Studio','Real live data'],
   challenge:'Supervisors needed to see team performance during the day, not in a report a week later.',
-  solution:'Live dashboards that pull from the daily tracker and flag who needs coaching, with client data kept private.',
-  result:'',imgs:[13]}
+  solution:'I built the database in Google Sheets and connected it to Looker Studio with real live data: a clean DATA tab that joins every team, calculated fields for SLA and turnaround, and dashboards that refresh every 15 minutes and flag who needs coaching, with client data kept private.',
+  result:'The weekly report that took about 3 hours to build by hand now updates itself, and leads check the team twice a shift.',
+  blocks:[
+   {k:'01',h:'How it’s built',p:'From the daily tracker to a clean data tab, a Looker Studio data source and the dashboards each role uses.',imgs:['pipeline']},
+   {k:'02',h:'The database',p:'One row per task, dropdowns for every status and a protected DATA tab, so the numbers never break.',imgs:['database']},
+   {k:'03',h:'Connecting live data',p:'Calculated fields for on time, overdue and turnaround, and a Google Sheets connector that refreshes every 15 minutes.',imgs:['calculated-fields']},
+   {k:'04',h:'Dashboard examples',p:'A team operations view for leads during the shift, and a QA and SLA view that shows who needs coaching.',imgs:['team-operations','qa-sla']}
+  ],imgs:[]}
 ];
 const pad=n=>String(n).padStart(2,'0');
 const pc=p=>p.blocks?p.blocks.reduce((a,b)=>a+b.imgs.length,0):p.imgs.length;
