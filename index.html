@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Joshua Bermudez: Growth Marketing & Creative Specialist. Commercial design, publication design, motion for ads, Google Ads and Meta Ads.">
+<meta name="description" content="Joshua Bermudez: Growth Marketing, Creativity & Leadership Specialist. Commercial design, publication design, motion for ads, Google Ads and Meta Ads.">
 <title>Joshua Bermudez Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap">
@@ -397,6 +397,26 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 @keyframes lineGrow{0%{transform:scaleX(.15);opacity:.5}12%{transform:scaleX(1);opacity:1}88%{transform:scaleX(1);opacity:1}100%{transform:scaleX(.15);opacity:.5}}
 .s-count{font:400 13px var(--body);color:var(--muted);letter-spacing:.06em;margin-left:4px;font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:reduce){.s-line{animation:none}}
+/* How I work (thinking + doing) */
+.approach{background:var(--bg-2);border-block:1px solid var(--line)}
+.approach h2 span{font-weight:300;color:#a1a1a6}
+.ap-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.ap-grid{grid-template-columns:1fr}}
+.ap-col{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:22px;min-width:0}
+.ap-k{font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#9db8ff}
+.ap-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;counter-reset:ap}
+@media (max-width:480px){.ap-steps{grid-template-columns:1fr}}
+.ap-steps .step{counter-increment:ap;padding-top:16px}
+.ap-steps .step b{display:block;font:600 19px var(--display);letter-spacing:-.02em;margin-bottom:6px}
+.ap-steps .step b::before{content:"0" counter(ap) "  ";color:var(--muted);font-weight:400;font-size:14px;white-space:pre}
+.ap-steps .step p,.ap-do p{color:var(--muted);font-size:15px;margin:0}
+.ap-do{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px}
+.ap-do li{display:flex;gap:16px;align-items:flex-start}
+.ap-do .by-ic{flex:none}
+.ap-do b{display:block;font:600 19px var(--display);letter-spacing:-.02em;margin:2px 0 4px}
+/* About: scholarship aside */
+.bio-aside{margin-top:22px;padding:14px 18px;border-left:2px solid var(--accent);background:rgba(255,255,255,.03);border-radius:0 14px 14px 0;color:var(--muted);font-size:15px;max-width:60ch}
+.bio-aside b{color:#f5f5f7;font-weight:600}
 /* Beyond design */
 .beyond{margin-top:clamp(64px,9vw,112px);display:flex;flex-direction:column;gap:32px}
 .by-head h3{font-size:clamp(28px,3.6vw,48px);margin-top:12px;line-height:1.08}
@@ -503,7 +523,7 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
     <div class="wrap hero-c">
       <p class="kicker">El Salvador · Remote</p>
       <h1 class="name" aria-label="Joshua Bermudez"><span class="w">Joshua</span> <span class="w">Bermudez</span></h1>
-      <p class="lead"><b>Growth Marketing &amp; Creative Specialist.</b> I design the brand, build the ad, run it on Google and Meta, read the numbers and lead the team that ships it. Marketing graduate (UCA) with 5+ years in marketing, ad operations and team leadership for U.S. travel and fintech accounts.</p>
+      <p class="lead"><b>Growth Marketing, Creativity &amp; Leadership Specialist.</b> I design the brand, build the ad, run it on Google and Meta, read the numbers and lead the team that ships it. Marketing graduate (UCA) with 5+ years in marketing, ad operations and team leadership for U.S. travel and fintech accounts.</p>
       <div class="btns">
         <a class="btn primary" href="#work">See the work →</a>
         <a class="btn ghost" href="#about">About me</a>
@@ -570,21 +590,6 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
   </div>
 </dialog>
 
-<section id="process" style="background:var(--bg-2);border-block:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div><span class="eyebrow">Process</span><h2>The way I work.</h2></div>
-      <p>The same loop I ran with teams supporting U.S. marketing operations, now applied to every campaign.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><span class="eyebrow">Step 1</span><h3>Diagnose</h3><p>Read the funnel by stage and find the metric that is really breaking.</p></div>
-      <div class="step"><span class="eyebrow">Step 2</span><h3>Create</h3><p>Design hooks and visuals for the audience's real pain points, per platform.</p></div>
-      <div class="step"><span class="eyebrow">Step 3</span><h3>Launch</h3><p>Set up, traffic and QA the campaign on Google and Meta.</p></div>
-      <div class="step"><span class="eyebrow">Step 4</span><h3>Optimize</h3><p>Test, move budget to winners and report it in a dashboard anyone can read.</p></div>
-    </div>
-  </div>
-</section>
-
 <section id="about">
   <div class="wrap about">
     <figure class="portrait rv">
@@ -595,6 +600,7 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
       <div class="rv">
         <span class="eyebrow">About</span>
         <p class="bio" style="margin-top:16px">I'm Joshua, a marketer who designs. <span>I started in social media sales and grew into leading 20+ people and supervising ad operations for U.S. brands. I'm proactive, clear when I communicate, and I turn data into actions a team can follow.</span></p>
+        <p class="bio-aside"><b>Where it started:</b> I was a Gloria de Kriete Foundation scholar (Programa Oportunidades, 2015–2017), which earned me a full scholarship to study Marketing at UCA.</p>
       </div>
       <ol class="tl rv">
         <li><span class="when">Apr 2026 – Sep 2026</span><h4>Supervisor, Digital Marketing · EMAYA Services</h4><p>Led 5+ Ad Ops agents and campaign managers for a major U.S. online travel brand: Google Ads setup, creative deployment, billing cycles.</p></li>
@@ -620,30 +626,6 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
         <div class="ring" style="--v:90"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="rv-c" cx="60" cy="60" r="52"/></svg><b>90%</b><span>Communication</span></div>
         <div class="ring" style="--v:90"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="rv-c" cx="60" cy="60" r="52"/></svg><b>90%</b><span>Leadership</span></div>
       </div>
-    </div>
-  </div>
-
-  <div class="wrap beyond rv" id="beyond">
-    <div class="by-head">
-      <span class="eyebrow">Beyond design</span>
-      <h3>I don't just design it.<br><span>I build it, animate it and plug AI into it.</span></h3>
-    </div>
-    <div class="by-grid">
-      <article class="by-c">
-        <div class="by-ic web" aria-hidden="true"><i></i><i></i><i></i></div>
-        <h4>Animated, functional websites</h4>
-        <p>Landing pages and sites that move, load fast and convert. Like the one you're on.</p>
-      </article>
-      <article class="by-c">
-        <div class="by-ic play" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><path d="M16 13l11 7-11 7z"/></svg></div>
-        <h4>Motion graphics &amp; video</h4>
-        <p>Quality motion and audiovisual pieces, planned inside a creative strategy, not just edited.</p>
-      </article>
-      <article class="by-c">
-        <div class="by-ic ai" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="8" cy="12" r="3"/><circle cx="8" cy="28" r="3"/><circle cx="20" cy="20" r="4"/><circle cx="32" cy="10" r="3"/><circle cx="32" cy="30" r="3"/><path d="M11 13l5 5M11 27l5-5M24 18l5-6M24 22l5 6"/></svg></div>
-        <h4>AI built into marketing</h4>
-        <p>Beyond generating images: I use AI to build digital assets, automations and tools that give businesses real impact.</p>
-      </article>
     </div>
   </div>
 </section>
@@ -682,20 +664,31 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
   </div>
 </section>
 
-<section id="education" style="padding-top:0">
+<section id="approach" class="approach">
   <div class="wrap">
     <div class="sec-head stack rv">
-      <span class="eyebrow">Education</span><h2>Where it started.</h2>
+      <span class="eyebrow">How I work</span>
+      <h2>Strategy first. <span>Then I build it.</span></h2>
+      <p>I think it through before I touch a pixel, and I can take it all the way to something that runs.</p>
     </div>
-    <div class="edu">
-      <article class="award edu-c rv">
-        <div class="cimg photo"><img src="me/uca.jpg" alt="Joshua at his UCA graduation" loading="lazy"></div>
-        <span class="y">UCA · Graduated</span><h3>Bachelor's degree in Marketing</h3><p>Universidad Centroamericana José Simeón Cañas, San Salvador. Plus Graphic Design and Digital Marketing training.</p>
-      </article>
-      <article class="award edu-c rv">
-        <div class="cimg emblem" aria-hidden="true"><span>Fundación<br><b>Gloria de Kriete</b></span><small>Programa Oportunidades</small></div>
-        <span class="y">2015 – 2017</span><h3>Gloria de Kriete Scholarship</h3><p>Program for outstanding students from 9th grade through high school. Earned a full university scholarship.</p>
-      </article>
+    <div class="ap-grid">
+      <div class="ap-col rv">
+        <span class="ap-k">The thinking</span>
+        <ol class="ap-steps">
+          <li class="step"><b>Diagnose</b><p>Find the metric that is really breaking.</p></li>
+          <li class="step"><b>Plan</b><p>Audience, message and channel before any design.</p></li>
+          <li class="step"><b>Launch</b><p>Build, set up and QA the campaign on Google and Meta.</p></li>
+          <li class="step"><b>Optimize</b><p>Test, move budget to what wins and report it clearly.</p></li>
+        </ol>
+      </div>
+      <div class="ap-col rv">
+        <span class="ap-k">The doing</span>
+        <ul class="ap-do">
+          <li><div class="by-ic web" aria-hidden="true"><i></i><i></i><i></i></div><div><b>Websites that move</b><p>Fast landing pages and sites that convert, like this one.</p></div></li>
+          <li><div class="by-ic play" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><path d="M16 13l11 7-11 7z"/></svg></div><div><b>Motion &amp; video</b><p>Animated pieces planned inside the strategy, not just edited.</p></div></li>
+          <li><div class="by-ic ai" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="8" cy="12" r="3"/><circle cx="8" cy="28" r="3"/><circle cx="20" cy="20" r="4"/><circle cx="32" cy="10" r="3"/><circle cx="32" cy="30" r="3"/><path d="M11 13l5 5M11 27l5-5M24 18l5-6M24 22l5 6"/></svg></div><div><b>AI in marketing</b><p>Automations, tools and assets that save time and drive results.</p></div></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -703,8 +696,8 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 <section class="contact" id="contact">
   <div class="wrap">
     <span class="eyebrow">Contact</span>
-    <h2 style="margin-top:14px">Need creative that <em>sells?</em></h2>
-    <p style="color:var(--muted);max-width:52ch;margin-top:20px">I'm available for in-house roles in digital marketing and for freelance campaigns. Tell me what you're launching.</p>
+    <h2 style="margin-top:14px">Let's take your business to the <em>next level.</em></h2>
+    <p style="color:var(--muted);max-width:52ch;margin-top:20px">Strategy, creative and execution in one place. Write me and let's build what comes next.</p>
     <div class="channels">
       <button class="copy" id="copy-mail" data-v="jebermudezg14@gmail.com">jebermudezg14@gmail.com<small>Copy</small></button>
       <button class="copy" id="copy-phone" data-v="+503 7458 4325">+503 7458 4325<small>Copy</small></button>
@@ -886,7 +879,7 @@ const ES={
 "Brand · Ads · Motion · Data · Leadership ·":"Marca · Ads · Motion · Datos · Liderazgo ·",
 "San Salvador · Remote · Available worldwide":"San Salvador · Remoto · Disponible a nivel global",
 "Creative that":"Creatividad que","performs.":"rinde.",
-"Growth Marketing & Creative Specialist.":"Especialista en Growth Marketing y Creatividad.",
+"Growth Marketing, Creativity & Leadership Specialist.":"Especialista en Growth Marketing, Creatividad y Liderazgo.",
 "I design the brand, build the ad, run it on Google and Meta, read the numbers and lead the team that ships it. Marketing graduate (UCA) with 5+ years in marketing, ad operations and team leadership for U.S. travel and fintech accounts.":"Diseño la marca, creo el anuncio, lo pauto en Google y Meta, leo los números y lidero al equipo que lo ejecuta. Licenciado en Mercadeo (UCA) con más de 5 años de experiencia en marketing, operaciones de pauta y liderazgo de equipos para cuentas de viajes y fintech de EE. UU.",
 "See the work →":"Ver proyectos →","Get in touch":"Contáctame",
 "people led across two lines of business":"personas lideradas en dos líneas de negocio","headcount scaled on a brand-new account":"de headcount en una cuenta nueva","promoted in under 3 years":"ascensos en menos de 3 años","years in marketing operations":"años en operaciones de marketing",
@@ -923,8 +916,20 @@ const ES={
 "Programa Oportunidades for outstanding students; earned a full university scholarship.":"Programa Oportunidades para estudiantes destacados; obtuve beca universitaria completa.",
 "Marketing degree":"Licenciatura en Mercadeo",
 "Universidad Centroamericana José Simeón Cañas. Plus Graphic Design and Digital Marketing training.":"Universidad Centroamericana José Simeón Cañas. Además, formación en Diseño Gráfico y Marketing Digital.",
-"Contact":"Contacto","Need creative that":"¿Necesitas creatividad que","sells?":"venda?",
-"I'm available for in-house roles in digital marketing and for freelance campaigns. Tell me what you're launching.":"Estoy disponible para puestos in-house de marketing digital y para campañas freelance. Cuéntame qué vas a lanzar.",
+"Contact":"Contacto","Let's take your business to the":"Llevemos tu negocio al","next level.":"siguiente nivel.",
+"Strategy, creative and execution in one place. Write me and let's build what comes next.":"Estrategia, creatividad y ejecución en un solo lugar. Escríbeme y construyamos lo que sigue.",
+"How I work":"Cómo trabajo","Strategy first.":"Primero la estrategia.","Then I build it.":"Después lo construyo.",
+"I think it through before I touch a pixel, and I can take it all the way to something that runs.":"Lo pienso antes de tocar un píxel, y lo llevo hasta algo que funciona de verdad.",
+"The thinking":"El pensamiento","The doing":"La ejecución","Plan":"Planificar",
+"Find the metric that is really breaking.":"Encontrar la métrica que de verdad está fallando.",
+"Audience, message and channel before any design.":"Audiencia, mensaje y canal antes de cualquier diseño.",
+"Build, set up and QA the campaign on Google and Meta.":"Montar, configurar y revisar la campaña en Google y Meta.",
+"Test, move budget to what wins and report it clearly.":"Probar, mover presupuesto a lo que gana y reportarlo claro.",
+"Websites that move":"Sitios web que se mueven","Fast landing pages and sites that convert, like this one.":"Landing pages y sitios rápidos que convierten, como este.",
+"Motion & video":"Motion y video","Animated pieces planned inside the strategy, not just edited.":"Piezas animadas pensadas dentro de la estrategia, no solo editadas.",
+"AI in marketing":"IA en el marketing","Automations, tools and assets that save time and drive results.":"Automatizaciones, herramientas y piezas que ahorran tiempo y generan resultados.",
+"Where it started:":"Dónde empezó todo:",
+"I was a Gloria de Kriete Foundation scholar (Programa Oportunidades, 2015–2017), which earned me a full scholarship to study Marketing at UCA.":"Fui becario de la Fundación Gloria de Kriete (Programa Oportunidades, 2015–2017), lo que me llevó a una beca completa para estudiar Mercadeo en la UCA.",
 "Copy":"Copiar","Copied":"Copiado",
 "Campaigns built, launched and optimized end to end, with the creative that runs in them.":"Campañas creadas, lanzadas y optimizadas de principio a fin, con los creativos que corren en ellas.",
 "Brand identity":"Identidad de marca","Brands built from zero: name, logo, palette, type and a brand book that keeps every piece consistent.":"Marcas creadas desde cero: nombre, logo, paleta, tipografía y un manual que mantiene cada pieza coherente.",
@@ -994,9 +999,9 @@ const SERVICES=[
  {f:'brand',h:'Brand identity',p:'Brands built from zero: name, logo, palette, type and a brand book that keeps every piece consistent.',tags:['Logo','Brand book','Applications'],
   m:[['jb/bento.jpg','jb','Inmobiliaria JB'],['motion/md-01.mp4','motion','Madoka'],['madoka/bag.jpg','madoka','Madoka']]},
  {f:'posts',h:'Social media content',p:'Posts, carousels and stories designed as one system, so the feed looks like a brand and not like single posts.',tags:['Posts','Carousels','Stories'],
-  m:[['cooltime/feed.jpg','cooltime','Cool Time'],['motion/ch-02.mp4','motion','Chicha'],['jb/story-1.jpg','jb','Inmobiliaria JB']]},
+  m:[['cooltime/feed.jpg','cooltime','Cool Time'],['motion/ch-02.mp4','motion','Chicha San Juan Nonualco'],['jb/story-1.jpg','jb','Inmobiliaria JB']]},
  {f:'posts',h:'Motion graphics',p:'Short animated stories and ads that hook in the first second and a half.',tags:['Instagram Stories','Reels','Kinetic type'],
-  m:[['motion/jb-01.mp4','motion','Inmobiliaria JB'],['motion/md-02.mp4','motion','Madoka'],['motion/ch-01.mp4','motion','Chicha']]},
+  m:[['motion/jb-01.mp4','motion','Inmobiliaria JB'],['motion/md-02.mp4','motion','Madoka'],['motion/ch-01.mp4','motion','Chicha San Juan Nonualco']]},
  {f:'brand',h:'Print & out-of-home',p:'The brand outside the screen: fleet wraps, totems, billboards, menus and packaging.',tags:['Fleet wrap','Billboards','Packaging'],
   m:[['jb/lightbox.jpg','jb','Inmobiliaria JB'],['home/van.jpg','home','Home Solutions'],['madoka/menu.jpg','madoka','Madoka']]},
  {f:'data',h:'Data & dashboards',p:'Dashboards and visual guides that turn numbers into decisions.',tags:['Dashboards','Training guides','KPIs'],
@@ -1011,7 +1016,7 @@ const PROJECTS=[
   blocks:[
    {k:'01',h:'Cool Time',p:'Air conditioning in motion: the heat drops from 34° to 22° as orange turns blue, a one-minute booking demo, and a three-sign tip in story format.',imgs:['ct-01.mp4','ct-02.mp4','ct-03.mp4'],c:3},
    {k:'02',h:'Madoka',p:'Slow and cinematic, like the brand: the fire opening through a letterbox, an omakase told in four arches, and the opening night with the 円 and the hanko seal.',imgs:['md-01.mp4','md-02.mp4','md-03.mp4'],c:3},
-   {k:'03',h:'Chicha',p:'Loud and colorful: the mosaic opens and the can drops in, a Salvadoran slang dictionary cut to rhythm, and a park day with paper flags and a countdown. Every piece keeps the +18 note.',imgs:['ch-01.mp4','ch-02.mp4','ch-03.mp4'],c:3},
+   {k:'03',h:'Chicha San Juan Nonualco',p:'Loud and colorful: the mosaic opens and the can drops in, a Salvadoran slang dictionary cut to rhythm, and a park day with paper flags and a countdown. Every piece keeps the +18 note.',imgs:['ch-01.mp4','ch-02.mp4','ch-03.mp4'],c:3},
    {k:'04',h:'Inmobiliaria JB',p:'Viral formats for real estate: a year of construction in 10 seconds, from blueprint to the real house, a POV of a new rental room by room, and a pick-one with three homes for the same budget.',imgs:['jb-01.mp4','jb-02.mp4','jb-03.mp4'],c:3}
   ],imgs:[]},
  {id:'jb',tags:['brand','ads','posts'],title:'Inmobiliaria JB',eye:'Brand from zero · Luxury real estate · Paid social',cover:'work/jb/cover.jpg',dir:'jb',
@@ -1036,7 +1041,7 @@ const PROJECTS=[
    {k:'',h:'',p:'',imgs:['card','lightbox'],c:2},
    {k:'',h:'',p:'',imgs:['process','feed'],c:2}
   ],imgs:[]},
- {id:'chicha',tags:['brand','ads','posts'],title:'Chicha',eye:'Beverage brand · Packaging · Activations',cover:'work/chicha/cover.jpg',dir:'chicha',
+ {id:'chicha',tags:['brand','ads','posts'],title:'Chicha San Juan Nonualco',eye:'Beverage brand · Packaging · Activations',cover:'work/chicha/cover.jpg',dir:'chicha',
   meta:['Fermented corn drink · El Salvador','Concept brand','Can & bottle launch'],
   challenge:'Chicha, the fermented corn drink of San Juan Nonualco, lives in town festivals and family homes, but on the shelf it competes with beers and rums that don’t speak like us. The brief: launch it as a new option, Salvadoran at heart yet minimal, modern and simple, in a personal can and a wine-style bottle to share.',
   solution:'I kept the logo exactly as it is and built a bone-and-ink system where the traditional colors only live in the C, the Llort-style pattern and a four-color ribbon. The voice is pure Salvadoran slang (“Lo nuestro también se brinda”, “Pa’ los cheros”), the packaging is modeled in 3D, and the brand steps out into parks and national fairs.',
@@ -1242,14 +1247,24 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
   if(!reduce)requestAnimationFrame(tick);
 })();
 
-/* Leadership moments: auto crossfade */
+/* Leadership moments: starts on photo 1 when it comes into view and auto-advances while visible */
 (function(){
-  const sl=[...document.querySelectorAll('.mslide')],dots=[...document.querySelectorAll('#mdots button')];let i=0,timer;
+  const sl=[...document.querySelectorAll('.mslide')],dots=[...document.querySelectorAll('#mdots button')],box=document.getElementById('mslider');
+  if(!box||!sl.length)return;
+  sl.forEach(s=>{const im=s.querySelector('img');if(im){im.loading='eager';im.decoding='async'}});
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,DELAY=4500;
+  let i=0,timer=null,visible=false,hover=false,seen=false;
   function show(k){i=k;sl.forEach((s,j)=>s.classList.toggle('on',j===k));dots.forEach((d,j)=>d.setAttribute('aria-current',j===k))}
-  function start(){clearInterval(timer);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>show((i+1)%sl.length),4500)}
-  dots.forEach((d,j)=>d.addEventListener('click',()=>{show(j);start()}));
-  const box=document.getElementById('mslider');box.addEventListener('pointerenter',()=>clearInterval(timer));box.addEventListener('pointerleave',start);
-  start();
+  function stop(){clearTimeout(timer);timer=null}
+  function run(){stop();if(reduce||!visible||hover||document.hidden)return;timer=setTimeout(()=>{show((i+1)%sl.length);run()},DELAY)}
+  dots.forEach((d,j)=>d.addEventListener('click',()=>{show(j);run()}));
+  box.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'){hover=true;stop()}});
+  box.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse'){hover=false;run()}});
+  document.addEventListener('visibilitychange',run);
+  show(0);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(es=>es.forEach(e=>{visible=e.isIntersecting;if(visible&&!seen){seen=true;show(0)}run()}),{threshold:.35}).observe(box);
+  }else{visible=true;run()}
 })();
 
 /* Skills animate on view */
