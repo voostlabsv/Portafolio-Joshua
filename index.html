@@ -762,6 +762,17 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 
 /* ---------- Language EN / ES ---------- */
 const ES={
+"Brand system · Paid social · Out-of-home":"Sistema de marca · Pauta en redes · Publicidad exterior","A/C services · San Salvador":"Aire acondicionado · San Salvador","Spanish first":"En español","Urgency to loyalty":"De la urgencia a la fidelidad",
+"An air-conditioning maintenance, installation and repair company had to look reliable on the street and online, in a market where people only remember their A/C when it stops cooling.":"Una empresa de mantenimiento, instalación y reparación de aires acondicionados tenía que verse confiable en la calle y en redes, en un mercado donde la gente solo se acuerda de su aire cuando deja de enfriar.",
+"I redrew the logo as clean vectors and built a full system around one idea: get in through the urgency (“Is your A/C failing?”), earn trust with certified technicians and a written guarantee, and keep the client with maintenance every six months. Ads with a visual hook in the first second, my own 3D props and a fixed contact bar.":"Redibujé el logo en vectores y construí un sistema completo alrededor de una idea: entrar por la urgencia (“¿Tu aire está fallando?”), ganar confianza con técnicos certificados y garantía por escrito, y fidelizar con mantenimiento cada seis meses. Anuncios con gancho visual en el primer segundo, objetos 3D propios y una barra de contacto fija.",
+"A brand ready for the street and for paid media: brand book, 12 Meta ads, Google Display, feed, carousel, stories, fleet wrap, uniforms and out-of-home.":"Una marca lista para la calle y para pauta: manual de marca, 12 anuncios Meta, Google Display, feed, carrusel, stories, rotulación de flota, uniformes y publicidad exterior.",
+"The client’s brand sheet: a water-drop mark, a blue palette and a few applications. A good base, but no system to sell with.":"La hoja de marca del cliente: una gota como símbolo, una paleta azul y algunas aplicaciones. Una buena base, pero sin un sistema para vender.",
+"“I only remember my A/C when it stops cooling.” People aren’t looking for a technician, they want to feel cool again today, with no surprises.":"“Me acuerdo del aire cuando ya no enfría.” La gente no busca un técnico, quiere volver a estar fresca hoy y sin sorpresas.",
+"The drop and airflow redrawn in vectors, two blues and a gray for trust and technology, Montserrat Bold and one script word per piece.":"La gota y el flujo de aire redibujados en vectores, dos azules y un gris para confianza y tecnología, Montserrat Bold y una palabra en script por pieza.",
+"A hook in the first second: giant 3D letters, a leaking unit with a stained wall, a cool-blue studio, a dirty vs clean filter, a WhatsApp chat and the San Salvador heat.":"Gancho en el primer segundo: letras 3D gigantes, un aire que gotea con la pared manchada, un estudio azul helado, un filtro sucio contra uno limpio, un chat de WhatsApp y el calor de San Salvador.",
+"One template for every piece: logo, big headline with one script word, a 3D hero of my own, an info panel with icons, a switch-style CTA and a fixed dark contact bar.":"Una plantilla para todas las piezas: logo, titular grande con una palabra en script, un protagonista 3D propio, un panel de datos con íconos, un CTA tipo interruptor y una barra de contacto oscura fija.",
+"“Your A/C, in the best hands.” A panoramic carousel that walks through a maintenance visit, plus stories with a poll, online booking and a countdown to the hot season.":"“Tu aire, en las mejores manos.” Un carrusel panorámico que recorre una visita de mantenimiento, y stories con encuesta, agenda en línea y cuenta regresiva a la temporada de calor.",
+"Built for how A/C service is sold in El Salvador: a wrapped van, technician uniforms and ID, business cards, a city totem and a mall lightbox.":"Pensado para cómo se vende el servicio de aire en El Salvador: una van rotulada, uniformes y credencial de técnico, tarjetas, un tótem urbano y un lightbox en centro comercial.",
 "Brand from zero · Launch strategy · Paid social":"Marca desde cero · Estrategia de lanzamiento · Pauta en redes","U.S. roofing & repairs":"Techos y reparaciones en EE. UU.","Market penetration":"Penetración de mercado",
 "A new roofing and home-repair company had to win homeowners in a crowded U.S. market, mostly Hispanic families who need the repair now but can’t pay it all at once.":"Una nueva empresa de techos y reparaciones tenía que ganarse a los propietarios en un mercado saturado de EE. UU., sobre todo familias hispanas que necesitan reparar ya, pero no pueden pagarlo de una vez.",
 "I built the brand from zero and launched it with a market-penetration strategy: lead with credit on the repair (up to 25 years), prove trust with real before/after work and a license, and close with a free inspection. Bilingual: English for the hook, Spanish for the trust.":"Construí la marca desde cero y la lancé con una estrategia de penetración de mercado: entrar con el crédito en la reparación (hasta 25 años), demostrar confianza con trabajos reales de antes/después y licencia, y cerrar con una inspección gratis. Bilingüe: inglés para el gancho, español para la confianza.",
@@ -924,11 +935,27 @@ const PROJECTS=[
   challenge:'Give a small Salvadoran town a brand that honors its traditions and still feels current to younger visitors.',
   solution:'An illustrated wordmark built from local folk-art patterns, a hand-lettered secondary type, an icon set drawn from local crafts and nature, and the line “Lo nuestro también es tendencia”.',
   result:'',imgs:[6,7]},
- {id:'cooltime',tags:['brand'],title:'Cool Time',eye:'Brand identity · Commercial design',cover:'work/p04.jpg',
-  meta:['HVAC services','Logo','Fleet & uniform'],
-  challenge:'An air-conditioning maintenance and repair company needed to look reliable and professional on the street and online.',
-  solution:'A mark that merges a water drop with a cool-air swirl, a blue palette for freshness and trust, a type system, and applications on vans, uniforms, cards and social.',
-  result:'',imgs:[3,4]},
+ {id:'cooltime',tags:['brand','ads','posts'],title:'Cool Time',eye:'Brand system · Paid social · Out-of-home',cover:'work/cooltime/cover.jpg',dir:'cooltime',
+  meta:['A/C services · San Salvador','Spanish first','Urgency to loyalty'],
+  challenge:'An air-conditioning maintenance, installation and repair company had to look reliable on the street and online, in a market where people only remember their A/C when it stops cooling.',
+  solution:'I redrew the logo as clean vectors and built a full system around one idea: get in through the urgency (“Is your A/C failing?”), earn trust with certified technicians and a written guarantee, and keep the client with maintenance every six months. Ads with a visual hook in the first second, my own 3D props and a fixed contact bar.',
+  result:'A brand ready for the street and for paid media: brand book, 12 Meta ads, Google Display, feed, carousel, stories, fleet wrap, uniforms and out-of-home.',
+  blocks:[
+   {k:'01',h:'Where it started',p:'The client’s brand sheet: a water-drop mark, a blue palette and a few applications. A good base, but no system to sell with.',imgs:['orig-1','orig-2'],c:2},
+   {k:'02',h:'The insight',p:'“I only remember my A/C when it stops cooling.” People aren’t looking for a technician, they want to feel cool again today, with no surprises.',imgs:['bb-strategy']},
+   {k:'03',h:'Identity',p:'The drop and airflow redrawn in vectors, two blues and a gray for trust and technology, Montserrat Bold and one script word per piece.',imgs:['bento']},
+   {k:'',h:'',p:'',imgs:['bb-logo','bb-versions','bb-color','bb-type'],c:2},
+   {k:'04',h:'Paid social',p:'A hook in the first second: giant 3D letters, a leaking unit with a stained wall, a cool-blue studio, a dirty vs clean filter, a WhatsApp chat and the San Salvador heat.',imgs:['ad-01','ad-02','ad-03','ad-04','ad-06','ad-09'],c:3},
+   {k:'',h:'',p:'',imgs:['phone','floating'],c:2},
+   {k:'05',h:'A system, not single posts',p:'One template for every piece: logo, big headline with one script word, a 3D hero of my own, an info panel with icons, a switch-style CTA and a fixed dark contact bar.',imgs:['bb-system']},
+   {k:'',h:'',p:'',imgs:['ad-07','ad-08','ad-11'],c:3},
+   {k:'06',h:'Carousel & stories',p:'“Your A/C, in the best hands.” A panoramic carousel that walks through a maintenance visit, plus stories with a poll, online booking and a countdown to the hot season.',imgs:['carousel']},
+   {k:'',h:'',p:'',imgs:['story-1','story-2','story-3','story-4'],c:4},
+   {k:'',h:'',p:'',imgs:['profile','google'],c:2},
+   {k:'07',h:'Out in the street',p:'Built for how A/C service is sold in El Salvador: a wrapped van, technician uniforms and ID, business cards, a city totem and a mall lightbox.',imgs:['van'],c:1},
+   {k:'',h:'',p:'',imgs:['totem','lightbox'],c:2},
+   {k:'',h:'',p:'',imgs:['uniforms','feed'],c:2}
+  ],imgs:[]},
  {id:'training',tags:['data'],title:'Training guides',eye:'Information design',cover:'work/p09.jpg',
   meta:['Fintech operations','Step-by-step guides','Call flows'],
   challenge:'A team growing from zero to 40+ people had to learn complex payment processes quickly and without errors.',
@@ -968,7 +995,7 @@ function openProject(id){
   document.getElementById('pj-title').textContent=tr(p.title);
   document.getElementById('pj-meta').innerHTML=p.meta.map(m=>`<span>${tr(m)}</span>`).join('');
   document.getElementById('pj-csr').innerHTML=[['Challenge',p.challenge],['Solution',p.solution],['Result',p.result]].filter(r=>r[1]).map(r=>`<div><dt>${tr(r[0])}</dt><dd>${tr(r[1])}</dd></div>`).join('');
-  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}">${b.imgs.map(n=>`<img src="work/home/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
+  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}">${b.imgs.map(n=>`<img src="work/${p.dir||'home'}/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
     :p.imgs.map(n=>`<img src="work/p${pad(n)}.jpg" alt="${p.title}, piece" loading="lazy">`).join('');
   if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
   dlg.scrollTop=0;
