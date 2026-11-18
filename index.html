@@ -218,6 +218,7 @@ dialog#proj[open]{animation:pop .35s ease}
 .pj-blk p{color:var(--muted);font-size:15px;line-height:1.55;margin:0}
 .pj-blk h4{margin:0}
 .pj-g{display:grid;gap:12px}
+.pj-g video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#0b0d16;display:block;cursor:pointer}
 .pj-g.c2{grid-template-columns:repeat(2,1fr)}.pj-g.c3{grid-template-columns:repeat(3,1fr)}.pj-g.c4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:700px){.pj-g.c3,.pj-g.c4{grid-template-columns:repeat(2,1fr)}.pj-g.c2{grid-template-columns:1fr}}
 .pj-foot{display:flex;justify-content:flex-start}
@@ -762,6 +763,17 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 
 /* ---------- Language EN / ES ---------- */
 const ES={
+"Motion Graphics":"Motion Graphics",
+"Instagram Stories · Motion design":"Instagram Stories · Motion design",
+"9 stories · 9:16":"9 stories · 9:16",
+"Cool Time · Madoka · Chicha":"Cool Time · Madoka · Chicha",
+"Hook in 1.5 s":"Gancho en 1.5 s",
+"A static story gets skipped in less than a second. Each brand needed short motion pieces that hook right away and still look like the same system as its feed and ads.":"Una story estática se salta en menos de un segundo. Cada marca necesitaba piezas cortas en movimiento que engancharan de inmediato y que se vieran como el mismo sistema de su feed y sus anuncios.",
+"Three stories per brand, built only with each brand’s own type, color, 3D props and photography: mask reveals, a giant word behind the product, kinetic type and an end card with logo and CTA. Smooth ease-out motion and no template transitions.":"Tres stories por marca, hechas solo con la tipografía, el color, los objetos 3D y la fotografía de cada marca: revelados con máscara, una palabra gigante detrás del producto, texto cinético y una tarjeta final con logo y CTA. Movimiento suave, sin transiciones de plantilla.",
+"9 ready-to-post stories in 1080×1920, 8 to 12 seconds each and silent, so the music is added in Instagram. Concept pieces; phone numbers and handles are placeholders.":"9 stories listas para publicar en 1080×1920, de 8 a 12 segundos y sin audio, para ponerles la música desde Instagram. Piezas conceptuales; los teléfonos y usuarios son de muestra.",
+"Air conditioning in motion: the heat drops from 34° to 22° as orange turns blue, a one-minute booking demo, and a three-sign tip in story format.":"El aire acondicionado en movimiento: el calor baja de 34° a 22° mientras el naranja se vuelve azul, una demo de agenda en 1 minuto y un tip de 3 señales en formato story.",
+"Slow and cinematic, like the brand: the fire opening through a letterbox, an omakase told in four arches, and the opening night with the 円 and the hanko seal.":"Lento y cinematográfico, como la marca: el fuego que se abre en franja de cine, un omakase contado en cuatro arcos y la noche de apertura con el 円 y el sello hanko.",
+"Loud and colorful: the mosaic opens and the can drops in, a Salvadoran slang dictionary cut to rhythm, and a park day with paper flags and a countdown. Every piece keeps the +18 note.":"Ruidoso y de colores: el mosaico se abre y cae la lata, un diccionario guanaco con cortes a ritmo y un domingo de parque con banderines y cuenta regresiva. Todas llevan la nota +18.",
 "Brand from zero · Concept brand · Paid social":"Marca desde cero · Marca conceptual · Pauta en redes",
 "Japanese dining · San Salvador":"Cocina japonesa · San Salvador",
 "Concept brand":"Marca conceptual",
@@ -924,6 +936,16 @@ const SLIDES=[
  {key:'data',eye:'Data & dashboards',title:'Data anyone can read.',desc:'Dashboards and visual guides that turn numbers into decisions.',tags:['Dashboards','Training guides','KPIs'],card:'Data & dashboards',more:'See more data work'}
 ];
 const PROJECTS=[
+ {id:'motion',tags:['posts'],title:'Motion Graphics',eye:'Instagram Stories · Motion design',cover:'work/motion/cover.jpg',dir:'motion',
+  meta:['9 stories · 9:16','Cool Time · Madoka · Chicha','Hook in 1.5 s'],
+  challenge:'A static story gets skipped in less than a second. Each brand needed short motion pieces that hook right away and still look like the same system as its feed and ads.',
+  solution:'Three stories per brand, built only with each brand’s own type, color, 3D props and photography: mask reveals, a giant word behind the product, kinetic type and an end card with logo and CTA. Smooth ease-out motion and no template transitions.',
+  result:'9 ready-to-post stories in 1080×1920, 8 to 12 seconds each and silent, so the music is added in Instagram. Concept pieces; phone numbers and handles are placeholders.',
+  blocks:[
+   {k:'01',h:'Cool Time',p:'Air conditioning in motion: the heat drops from 34° to 22° as orange turns blue, a one-minute booking demo, and a three-sign tip in story format.',imgs:['ct-01.mp4','ct-02.mp4','ct-03.mp4'],c:3},
+   {k:'02',h:'Madoka',p:'Slow and cinematic, like the brand: the fire opening through a letterbox, an omakase told in four arches, and the opening night with the 円 and the hanko seal.',imgs:['md-01.mp4','md-02.mp4','md-03.mp4'],c:3},
+   {k:'03',h:'Chicha',p:'Loud and colorful: the mosaic opens and the can drops in, a Salvadoran slang dictionary cut to rhythm, and a park day with paper flags and a countdown. Every piece keeps the +18 note.',imgs:['ch-01.mp4','ch-02.mp4','ch-03.mp4'],c:3}
+  ],imgs:[]},
  {id:'madoka',tags:['brand','ads','posts'],title:'Madoka',eye:'Brand from zero · Concept brand · Paid social',cover:'work/madoka/cover.jpg',dir:'madoka',
   meta:['Japanese dining · San Salvador','Concept brand','Families & executives'],
   challenge:'San Salvador has plenty of “sushi to go”, but no Japanese table for the moments that matter: the family Sunday, the celebration, the business lunch. The brief: create a high-end Japanese restaurant from zero, name included, for upper-middle and upper-class families and executives.',
@@ -1034,11 +1056,21 @@ function openProject(id){
   document.getElementById('pj-title').textContent=tr(p.title);
   document.getElementById('pj-meta').innerHTML=p.meta.map(m=>`<span>${tr(m)}</span>`).join('');
   document.getElementById('pj-csr').innerHTML=[['Challenge',p.challenge],['Solution',p.solution],['Result',p.result]].filter(r=>r[1]).map(r=>`<div><dt>${tr(r[0])}</dt><dd>${tr(r[1])}</dd></div>`).join('');
-  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}">${b.imgs.map(n=>`<img src="work/${p.dir||'home'}/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
+  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}">${b.imgs.map(n=>n.endsWith('.mp4')?`<video src="work/${p.dir}/${n}" poster="work/${p.dir}/${n.replace('.mp4','.jpg')}" muted loop playsinline preload="none" aria-label="${p.title}, ${tr(b.h)||'motion'}"></video>`:`<img src="work/${p.dir||'home'}/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
     :p.imgs.map(n=>`<img src="work/p${pad(n)}.jpg" alt="${p.title}, piece" loading="lazy">`).join('');
   if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
   dlg.scrollTop=0;
+  watchVideos();
 }
+/* motion pieces: play only while visible */
+let vio=null;
+function watchVideos(){
+  if(vio)vio.disconnect();
+  const vs=[...document.querySelectorAll('#pj-imgs video')];if(!vs.length)return;
+  vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting&&!reduce){v.play().catch(()=>{})}else v.pause()}),{root:dlg,threshold:.35});
+  vs.forEach(v=>{vio.observe(v);v.addEventListener('click',()=>{v.paused?v.play().catch(()=>{}):v.pause()})});
+}
+dlg.addEventListener('close',()=>{if(vio)vio.disconnect();document.querySelectorAll('#pj-imgs video').forEach(v=>v.pause())});
 grid.addEventListener('click',e=>{const t=e.target.closest('.tile');if(t)openProject(t.dataset.id)});
 document.getElementById('pj-x').addEventListener('click',()=>dlg.close());
 document.getElementById('pj-contact').addEventListener('click',()=>dlg.close());
