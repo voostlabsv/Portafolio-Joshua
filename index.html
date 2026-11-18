@@ -409,8 +409,29 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 .s-count{font:400 13px var(--body);color:var(--muted);letter-spacing:.06em;margin-left:4px;font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:reduce){.s-line{animation:none}}
 /* How I work (thinking + doing) */
-.approach{background:var(--bg-2);border-block:1px solid var(--line)}
-.approach h2 span{font-weight:300;color:#a1a1a6}
+.approach{--orange:#ff8a3d;--ob:linear-gradient(100deg,var(--orange),#ff6a5c 35%,var(--accent) 100%);position:relative;overflow:hidden;background:radial-gradient(60% 50% at 0% 0%,rgba(255,138,61,.10),transparent 70%),radial-gradient(55% 55% at 100% 100%,rgba(61,116,255,.12),transparent 70%),var(--bg-2);border-block:1px solid var(--line)}
+.approach .eyebrow{color:var(--orange)}
+.approach h2 span{font-weight:300;background:var(--ob);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:obShift 8s ease-in-out infinite alternate}
+@keyframes obShift{from{background-position:0% 50%}to{background-position:100% 50%}}
+.ap-col{position:relative}
+.ap-col::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,138,61,.45),rgba(255,255,255,.04) 40%,rgba(61,116,255,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.ap-steps .step::before{background:var(--ob)}
+.ap-steps .step b::before{color:var(--orange)}
+.ap-do .by-ic{background:linear-gradient(135deg,rgba(255,138,61,.20),rgba(61,116,255,.20));box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;animation:icFloat 4.2s ease-in-out infinite}
+.ap-do li:nth-child(2) .by-ic{animation-delay:-1.4s}.ap-do li:nth-child(3) .by-ic{animation-delay:-2.8s}
+@keyframes icFloat{0%,100%{transform:translateY(0);box-shadow:0 0 0 1px rgba(255,255,255,.06) inset,0 0 0 rgba(255,138,61,0)}50%{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 10px 26px -10px rgba(255,138,61,.55)}}
+.ap-do .by-ic.web i{background:linear-gradient(90deg,var(--orange),var(--accent-2))}
+.ap-do .by-ic svg{stroke:#ffb27d}
+.ap-do .by-ic.play svg path{fill:#ffb27d;animation:pulseP 2.4s ease-in-out infinite}
+.ap-do .by-ic.play svg circle{stroke-dasharray:80 27;animation:ring 4s linear infinite;transform-origin:20px 20px}
+@keyframes ring{to{transform:rotate(360deg)}}
+.approach .ap-k{background:var(--ob);-webkit-background-clip:text;background-clip:text;color:transparent;width:max-content}
+.ap-do .by-ic.ai svg{stroke:#9db8ff}
+.ap-do .by-ic.ai circle{fill:var(--orange)}
+.ap-do .by-ic.ai svg path{stroke-dasharray:4 3;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-14}}
+.ap-do li:hover .by-ic{animation-play-state:paused;transform:translateY(-4px) scale(1.06)}
+@media (prefers-reduced-motion:reduce){.approach h2 span,.ap-do .by-ic,.ap-do .by-ic *{animation:none!important}}
 .ap-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media (max-width:860px){.ap-grid{grid-template-columns:1fr}}
 .ap-col{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:22px;min-width:0}
@@ -708,8 +729,8 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
   <div class="wrap ct-grid">
    <div class="ct-main">
     <span class="eyebrow">Contact</span>
-    <h2 style="margin-top:14px">Let's take your business to the <em>next level.</em></h2>
-    <p style="color:var(--muted);max-width:52ch;margin-top:20px">Strategy, creative and execution in one place. Write me and let's build what comes next.</p>
+    <h2 style="margin-top:14px">Let's take your idea to the <em>next level.</em></h2>
+    <p style="color:var(--muted);max-width:52ch;margin-top:20px">Strategy, creative and execution in one professional. Write me and let's build what comes next.</p>
     <div class="channels">
       <button class="copy" id="copy-mail" data-v="jebermudezg14@gmail.com">jebermudezg14@gmail.com<small>Copy</small></button>
       <button class="copy" id="copy-phone" data-v="+503 7458 4325">+503 7458 4325<small>Copy</small></button>
@@ -934,8 +955,8 @@ const ES={
 "Programa Oportunidades for outstanding students; earned a full university scholarship.":"Programa Oportunidades para estudiantes destacados; obtuve beca universitaria completa.",
 "Marketing degree":"Licenciatura en Mercadeo",
 "Universidad Centroamericana José Simeón Cañas. Plus Graphic Design and Digital Marketing training.":"Universidad Centroamericana José Simeón Cañas. Además, formación en Diseño Gráfico y Marketing Digital.",
-"Contact":"Contacto","Keep exploring":"Sigue explorando","See the projects":"Ver proyectos","Back to top":"Volver al inicio","Let's take your business to the":"Llevemos tu negocio al","next level.":"siguiente nivel.",
-"Strategy, creative and execution in one place. Write me and let's build what comes next.":"Estrategia, creatividad y ejecución en un solo lugar. Escríbeme y construyamos lo que sigue.",
+"Contact":"Contacto","Keep exploring":"Sigue explorando","See the projects":"Ver proyectos","Back to top":"Volver al inicio","Let's take your idea to the":"Llevemos tu idea al","next level.":"siguiente nivel.",
+"Strategy, creative and execution in one professional. Write me and let's build what comes next.":"Estrategia, creatividad y ejecución en un mismo profesional. Escríbeme y construyamos lo que sigue.",
 "How I work":"Cómo trabajo","Strategy first.":"Primero la estrategia.","Then I build it.":"Después lo construyo.",
 "I think it through before I touch a pixel, and I can take it all the way to something that runs.":"Lo pienso antes de tocar un píxel, y lo llevo hasta algo que funciona de verdad.",
 "The thinking":"El pensamiento","The doing":"La ejecución","Plan":"Planificar",
