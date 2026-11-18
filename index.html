@@ -149,6 +149,17 @@ section{padding-block:clamp(72px,10vw,128px)}
 .contact{text-align:left;border-top:1px solid var(--line)}
 .contact h2{font-size:clamp(40px,7.5vw,104px);font-weight:800;max-width:12ch}
 .contact h2 em{font-style:normal;color:var(--accent)}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:end}
+@media (max-width:860px){.ct-grid{grid-template-columns:1fr;gap:56px}}
+.ct-links{display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
+.ct-k{font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.ct-links a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 2px;border-top:1px solid var(--line);color:var(--fg);text-decoration:none;font:500 clamp(20px,2vw,26px) var(--display);letter-spacing:-.02em;transition:color .3s}
+.ct-links a small{display:inline-block;width:34px;font:400 13px var(--body);color:var(--muted);letter-spacing:0;vertical-align:middle}
+.ct-links a i{font-style:normal;width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.07);font-size:18px;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,color .3s}
+.ct-links a:hover{color:#fff}
+.ct-links a:hover i{background:#f5f5f7;color:#000}
+.ct-links a[href="#work"]:hover i{transform:translateX(4px)}
+.ct-links a[href="#top"]:hover i{transform:translateY(-4px)}
 .channels{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .copy{font:500 15px var(--mono);background:var(--bg-2);border:1px solid var(--line);color:var(--fg);padding:13px 18px;border-radius:12px;cursor:pointer;user-select:all}
 .copy small{color:var(--muted);margin-left:10px;font-size:12px}
@@ -694,7 +705,8 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 </section>
 
 <section class="contact" id="contact">
-  <div class="wrap">
+  <div class="wrap ct-grid">
+   <div class="ct-main">
     <span class="eyebrow">Contact</span>
     <h2 style="margin-top:14px">Let's take your business to the <em>next level.</em></h2>
     <p style="color:var(--muted);max-width:52ch;margin-top:20px">Strategy, creative and execution in one place. Write me and let's build what comes next.</p>
@@ -702,6 +714,12 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
       <button class="copy" id="copy-mail" data-v="jebermudezg14@gmail.com">jebermudezg14@gmail.com<small>Copy</small></button>
       <button class="copy" id="copy-phone" data-v="+503 7458 4325">+503 7458 4325<small>Copy</small></button>
     </div>
+   </div>
+   <div class="ct-links" role="navigation" aria-label="Keep exploring">
+    <span class="ct-k">Keep exploring</span>
+    <a href="#work"><span><small>01</small>See the projects</span><i aria-hidden="true">→</i></a>
+    <a href="#top"><span><small>02</small>Back to top</span><i aria-hidden="true">↑</i></a>
+   </div>
   </div>
 </section>
 
@@ -916,7 +934,7 @@ const ES={
 "Programa Oportunidades for outstanding students; earned a full university scholarship.":"Programa Oportunidades para estudiantes destacados; obtuve beca universitaria completa.",
 "Marketing degree":"Licenciatura en Mercadeo",
 "Universidad Centroamericana José Simeón Cañas. Plus Graphic Design and Digital Marketing training.":"Universidad Centroamericana José Simeón Cañas. Además, formación en Diseño Gráfico y Marketing Digital.",
-"Contact":"Contacto","Let's take your business to the":"Llevemos tu negocio al","next level.":"siguiente nivel.",
+"Contact":"Contacto","Keep exploring":"Sigue explorando","See the projects":"Ver proyectos","Back to top":"Volver al inicio","Let's take your business to the":"Llevemos tu negocio al","next level.":"siguiente nivel.",
 "Strategy, creative and execution in one place. Write me and let's build what comes next.":"Estrategia, creatividad y ejecución en un solo lugar. Escríbeme y construyamos lo que sigue.",
 "How I work":"Cómo trabajo","Strategy first.":"Primero la estrategia.","Then I build it.":"Después lo construyo.",
 "I think it through before I touch a pixel, and I can take it all the way to something that runs.":"Lo pienso antes de tocar un píxel, y lo llevo hasta algo que funciona de verdad.",
