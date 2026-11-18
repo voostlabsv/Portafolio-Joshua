@@ -155,34 +155,11 @@ footer .wrap{padding-block:26px;display:flex;justify-content:space-between;flex-
 
 
 /* SHOWCASE (auto-sliding services) */
-.show{position:relative;overflow:hidden;min-height:clamp(620px,86vh,820px);display:flex;align-items:flex-end;padding-block:0;border-bottom:1px solid var(--line);isolation:isolate}
-.show-bgs{position:absolute;inset:0;z-index:-1}
-.show-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right top;opacity:0;transform:scale(1.06);transition:opacity .9s ease,transform 6s ease}
-.show-bg.on{opacity:1;transform:scale(1)}
-.show::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,var(--bg));z-index:-1}
-.show-in{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:end;padding-block:120px 48px}
-.show-text{display:flex;flex-direction:column;gap:18px;max-width:520px}
-.show-text h2{font-size:clamp(40px,5.6vw,76px);font-weight:800}
-.show-text p{color:#c9d0e2;font-size:17px}
-.show-text>*{transition:opacity .45s ease,transform .45s ease}
-.show-text.out>*{opacity:0;transform:translateY(14px)}
-.show-tags{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px}
-.show-tags li{font:500 12px var(--mono);border:1px solid color-mix(in srgb,var(--fg) 25%,transparent);padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--bg) 50%,transparent)}
-.show-text .btn{width:max-content}
-.show-ui{display:flex;flex-direction:column;gap:22px;min-width:0}
-.show-cards{display:flex;gap:16px;overflow:hidden;padding:6px 4px 10px}
-.scard{flex:0 0 auto;width:clamp(130px,13vw,180px);aspect-ratio:3/4;border-radius:14px;overflow:hidden;position:relative;border:1px solid color-mix(in srgb,var(--fg) 18%,transparent);cursor:pointer;padding:0;background:var(--bg-2);color:#fff;text-align:left;box-shadow:0 18px 40px rgba(0,0,0,.45);transition:transform .35s ease}
-.scard:hover{transform:translateY(-6px)}
-.scard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.scard span{position:absolute;inset:auto 0 0;padding:40px 12px 12px;background:linear-gradient(transparent,rgba(5,8,18,.92));font:700 15px/1.1 var(--display);text-transform:uppercase;letter-spacing:.01em}
 .show-ctrl{display:flex;align-items:center;gap:12px}
 .round{width:42px;height:42px;border-radius:50%;border:1px solid color-mix(in srgb,var(--fg) 30%,transparent);background:color-mix(in srgb,var(--bg) 55%,transparent);color:var(--fg);font-size:16px;cursor:pointer;flex:0 0 auto}
 .round:hover{border-color:var(--accent-2)}
 .bar{flex:1;height:2px;background:color-mix(in srgb,var(--fg) 20%,transparent);border-radius:2px;overflow:hidden;min-width:60px}
 .bar i{display:block;height:100%;width:0;background:var(--accent)}
-.idx{font:800 clamp(36px,4vw,56px)/1 var(--display);font-variant-numeric:tabular-nums}
-.grow{position:absolute;z-index:-1;object-fit:cover;border-radius:14px;pointer-events:none}
-@media (max-width:900px){.show-in{grid-template-columns:1fr;padding-block:clamp(230px,52vw,380px) 32px}.show{min-height:0}.show-bgs{height:clamp(300px,64vw,460px);bottom:auto}.show-bgs::after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(transparent,var(--bg));z-index:1}.show-bg{object-position:88% 0}.show::after{display:none}}
 
 /* WORK GRID */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -218,6 +195,7 @@ dialog#proj[open]{animation:pop .35s ease}
 .pj-blk p{color:var(--muted);font-size:15px;line-height:1.55;margin:0}
 .pj-blk h4{margin:0}
 .pj-g{display:grid;gap:12px}
+.pj-g video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#0b0d16;display:block;cursor:pointer}
 .pj-g.c2{grid-template-columns:repeat(2,1fr)}.pj-g.c3{grid-template-columns:repeat(3,1fr)}.pj-g.c4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:700px){.pj-g.c3,.pj-g.c4{grid-template-columns:repeat(2,1fr)}.pj-g.c2{grid-template-columns:1fr}}
 .pj-foot{display:flex;justify-content:flex-start}
@@ -243,11 +221,7 @@ nav{background:rgba(7,11,22,.55);backdrop-filter:saturate(180%) blur(20px);-webk
 .filters button{border:0;background:rgba(255,255,255,.07);color:#c7cbd6;font-weight:500;padding:9px 18px}
 .filters button:hover{background:rgba(255,255,255,.12)}
 .filters button[aria-pressed="true"]{background:#f5f5f7;color:#0b0b0f}
-.show-tags li,.meta span,.svc li{font:500 12px var(--body);border:0;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);color:#dfe3ec}
-.scard{border:0;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.55)}
-.scard span{font:600 14px/1.15 var(--display);text-transform:none;letter-spacing:-.01em}
-.scard:hover{transform:scale(1.05)}
-.idx{font-weight:300;letter-spacing:-.04em}
+.meta span,.svc li{font:500 12px var(--body);border:0;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);color:#dfe3ec}
 .proof strong{font-weight:300!important;letter-spacing:-.05em}
 .tile .cv{border:0;border-radius:12px}
 .tile h3{font-size:20px}
@@ -388,16 +362,6 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 .hero-c .btns{margin-top:22px}
 .hero-c .btn{padding:12px 22px;font-size:14px}
 /* Showcase: calmer layout */
-.show{min-height:clamp(700px,100vh,920px)}
-@media (max-width:900px){.show{min-height:0}}
-.show-text{gap:14px;max-width:440px}
-.show-text h2{font-size:clamp(36px,4.6vw,64px)}
-.show-text p{font-size:16px;color:#b9c1d3}
-.show-in{align-items:end}
-.show-ui{align-self:end}
-.show-cards{justify-content:flex-end}
-.scard{width:clamp(110px,10vw,150px)}
-@media (max-width:900px){.show-cards{justify-content:flex-start}}
 /* Section head stacked + aligned */
 .sec-head.stack{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .sec-head.stack h2{margin-top:0}
@@ -425,7 +389,6 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 .s-line{display:block;width:44px;height:1px;background:linear-gradient(90deg,var(--accent-2),transparent);transform-origin:left;animation:lineGrow 6.5s linear infinite}
 @keyframes lineGrow{0%{transform:scaleX(.15);opacity:.5}12%{transform:scaleX(1);opacity:1}88%{transform:scaleX(1);opacity:1}100%{transform:scaleX(.15);opacity:.5}}
 .s-count{font:400 13px var(--body);color:var(--muted);letter-spacing:.06em;margin-left:4px;font-variant-numeric:tabular-nums}
-.show-text h2{background:linear-gradient(90deg,#fff 0%,#fff 55%,#9db8ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 @media (prefers-reduced-motion:reduce){.s-line{animation:none}}
 /* Beyond design */
 .beyond{margin-top:clamp(64px,9vw,112px);display:flex;flex-direction:column;gap:32px}
@@ -460,6 +423,54 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 @keyframes rise{from{opacity:.15;transform:translateY(40px)}to{opacity:1;transform:none}}
 @keyframes mask{from{clip-path:inset(18% 6% 18% 6% round 12px);transform:scale(1.04)}to{clip-path:inset(0 0 0 0 round 12px);transform:none}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* ===== Qué hago: list + animated tiles ===== */
+.svx{position:relative;border-bottom:1px solid var(--line);overflow:hidden;isolation:isolate}
+.svx::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(48% 60% at 78% 45%,rgba(61,116,255,.11),transparent 70%),radial-gradient(30% 40% at 10% 90%,rgba(127,164,255,.05),transparent 70%)}
+.svx-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-areas:"label stage" "list stage";grid-template-rows:auto 1fr;column-gap:clamp(40px,6vw,88px);row-gap:28px;align-items:start}
+.svx .s-label{grid-area:label}
+.svx .s-line{animation:none}
+.svx-list{grid-area:list;list-style:none;margin:0;padding:0;border-left:1px solid rgba(255,255,255,.08)}
+.svx-item{position:relative;padding:0 0 0 24px}
+.svx-item::before{content:"";position:absolute;left:-1px;top:0;bottom:0;width:1px;background:var(--accent-2);transform:scaleY(var(--k,0));transform-origin:top;opacity:0;transition:opacity .3s}
+.svx-item[aria-current="true"]::before{opacity:1}
+.svx-h{display:block;width:100%;text-align:left;background:none;border:0;padding:11px 0;cursor:pointer;color:#67728e;font:300 clamp(22px,2.3vw,32px)/1.12 var(--display);letter-spacing:-.025em;transition:color .35s}
+.svx-h:hover{color:#aab3c9}
+.svx-item[aria-current="true"] .svx-h{color:#fff;font-weight:400}
+.svx-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.8,.2,1)}
+.svx-item[aria-current="true"] .svx-body{grid-template-rows:1fr}
+.svx-body>div{overflow:hidden;display:flex;flex-direction:column;gap:12px;opacity:0;transition:opacity .4s}
+.svx-item[aria-current="true"] .svx-body>div{opacity:1;transition-delay:.15s}
+.svx-body p{color:#a9b2c7;font-size:15.5px;line-height:1.55;max-width:42ch}
+.svx-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.svx-tags li{font:500 12px var(--body);background:rgba(255,255,255,.07);color:#cfd6e6;padding:4px 10px;border-radius:999px}
+.svx-more{font:500 14px var(--body);color:var(--accent-2);text-decoration:none;width:max-content;margin-bottom:14px}
+.svx-more:hover{color:#fff}
+.svx-stage{grid-area:stage;display:flex;flex-direction:column;gap:30px;min-width:0;align-self:center}
+.svx-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,18px);padding-bottom:40px}
+.svx-tile{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#0d1426;border:0;padding:0;cursor:pointer;box-shadow:0 24px 60px rgba(0,0,0,.45);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.svx-tile:nth-child(1){transform:translateY(22px)}
+.svx-tile:nth-child(3){transform:translateY(40px)}
+.svx-tile:hover{transform:translateY(14px) scale(1.02)}
+.svx-tile:nth-child(2):hover{transform:translateY(-8px) scale(1.02)}
+.svx-tile:nth-child(3):hover{transform:translateY(32px) scale(1.02)}
+.svx-m{position:absolute;inset:0;margin:0;opacity:0;transform:scale(1.08);transition:opacity .8s ease,transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0) * 110ms)}
+.svx-m.on{opacity:1;transform:none}
+.svx-m img,.svx-m video{width:100%;height:100%;object-fit:cover;display:block}
+.svx-m::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(5,8,18,.7));pointer-events:none}
+.svx-m figcaption{position:absolute;left:12px;bottom:10px;z-index:1;font:500 12px var(--body);color:#e6eaf3;display:flex;align-items:center;gap:6px}
+.svx-m figcaption i{width:6px;height:6px;border-radius:50%;background:var(--up);box-shadow:0 0 0 3px rgba(63,214,143,.25)}
+.svx .show-ctrl{display:flex;align-items:center;gap:12px}
+@media (max-width:900px){
+  .svx-in{grid-template-columns:1fr;grid-template-areas:"label" "stage" "list";grid-template-rows:auto;row-gap:24px}
+  .svx-stage{gap:22px}
+  .svx-tiles{padding-bottom:28px}
+  .svx-tile{border-radius:12px}
+  .svx-tile:nth-child(1){transform:translateY(14px)}.svx-tile:nth-child(3){transform:translateY(26px)}
+  .svx-h{font-size:22px;padding:9px 0}
+  .svx-m figcaption{left:8px;bottom:7px;font-size:10.5px}
+}
+@media (prefers-reduced-motion:reduce){.svx-m{transition:opacity .2s}}
 </style>
 </head>
 <body>
@@ -497,28 +508,16 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 
 
 
-<section id="services" class="show" aria-roledescription="carousel" aria-label="What I do">
-  <div class="show-bgs" aria-hidden="true">
-    <img class="show-bg on" src="slides/ads.jpg" alt="">
-    <img class="show-bg" src="slides/brand.jpg" alt="">
-    <img class="show-bg" src="slides/posts.jpg" alt="">
-    <img class="show-bg" src="slides/data.jpg" alt="">
-  </div>
-  <div class="wrap show-in">
-    <div class="show-text" aria-live="polite">
-      <p class="s-label" id="s-eye"><span class="s-line" aria-hidden="true"></span><span class="s-lt">What I do</span><span class="s-count" id="s-count" aria-hidden="true">01 / 04</span></p>
-      <h2 id="s-title">Google &amp; Meta Ads</h2>
-      <p id="s-desc">Campaigns built, launched and optimized end to end.</p>
-      <ul class="show-tags" id="s-tags"><li>Google Ads</li><li>Meta Ads</li><li>Reporting</li></ul>
-      <a class="btn primary" id="s-more" href="#work" data-f="ads">See more ads work →</a>
-    </div>
-    <div class="show-ui">
-      <div class="show-cards" id="s-cards"></div>
+<section id="services" class="svx" aria-roledescription="carousel" aria-label="What I do">
+  <div class="wrap svx-in">
+    <p class="s-label"><span class="s-line" aria-hidden="true"></span><span>What I do</span></p>
+    <ol class="svx-list" id="s-list"></ol>
+    <div class="svx-stage">
+      <div class="svx-tiles" id="s-tiles"></div>
       <div class="show-ctrl">
         <button class="round" id="s-prev" aria-label="Previous">←</button>
         <button class="round" id="s-next" aria-label="Next">→</button>
         <div class="bar"><i id="s-bar"></i></div>
-        <span class="idx" id="s-idx">01</span>
       </div>
     </div>
   </div>
@@ -762,6 +761,17 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 
 /* ---------- Language EN / ES ---------- */
 const ES={
+"Motion Graphics":"Motion Graphics",
+"Instagram Stories · Motion design":"Instagram Stories · Motion design",
+"9 stories · 9:16":"9 stories · 9:16",
+"Cool Time · Madoka · Chicha":"Cool Time · Madoka · Chicha",
+"Hook in 1.5 s":"Gancho en 1.5 s",
+"A static story gets skipped in less than a second. Each brand needed short motion pieces that hook right away and still look like the same system as its feed and ads.":"Una story estática se salta en menos de un segundo. Cada marca necesitaba piezas cortas en movimiento que engancharan de inmediato y que se vieran como el mismo sistema de su feed y sus anuncios.",
+"Three stories per brand, built only with each brand’s own type, color, 3D props and photography: mask reveals, a giant word behind the product, kinetic type and an end card with logo and CTA. Smooth ease-out motion and no template transitions.":"Tres stories por marca, hechas solo con la tipografía, el color, los objetos 3D y la fotografía de cada marca: revelados con máscara, una palabra gigante detrás del producto, texto cinético y una tarjeta final con logo y CTA. Movimiento suave, sin transiciones de plantilla.",
+"9 ready-to-post stories in 1080×1920, 8 to 12 seconds each and silent, so the music is added in Instagram. Concept pieces; phone numbers and handles are placeholders.":"9 stories listas para publicar en 1080×1920, de 8 a 12 segundos y sin audio, para ponerles la música desde Instagram. Piezas conceptuales; los teléfonos y usuarios son de muestra.",
+"Air conditioning in motion: the heat drops from 34° to 22° as orange turns blue, a one-minute booking demo, and a three-sign tip in story format.":"El aire acondicionado en movimiento: el calor baja de 34° a 22° mientras el naranja se vuelve azul, una demo de agenda en 1 minuto y un tip de 3 señales en formato story.",
+"Slow and cinematic, like the brand: the fire opening through a letterbox, an omakase told in four arches, and the opening night with the 円 and the hanko seal.":"Lento y cinematográfico, como la marca: el fuego que se abre en franja de cine, un omakase contado en cuatro arcos y la noche de apertura con el 円 y el sello hanko.",
+"Loud and colorful: the mosaic opens and the can drops in, a Salvadoran slang dictionary cut to rhythm, and a park day with paper flags and a countdown. Every piece keeps the +18 note.":"Ruidoso y de colores: el mosaico se abre y cae la lata, un diccionario guanaco con cortes a ritmo y un domingo de parque con banderines y cuenta regresiva. Todas llevan la nota +18.",
 "Beverage brand · Packaging · Activations":"Marca de bebida · Empaque · Activaciones",
 "Fermented corn drink · El Salvador":"Bebida fermentada de maíz · El Salvador",
 "Concept brand":"Marca conceptual",
@@ -885,6 +895,13 @@ const ES={
 "Contact":"Contacto","Need creative that":"¿Necesitas creatividad que","sells?":"venda?",
 "I'm available for in-house roles in digital marketing and for freelance campaigns. Tell me what you're launching.":"Estoy disponible para puestos in-house de marketing digital y para campañas freelance. Cuéntame qué vas a lanzar.",
 "Copy":"Copiar","Copied":"Copiado",
+"Campaigns built, launched and optimized end to end, with the creative that runs in them.":"Campañas creadas, lanzadas y optimizadas de principio a fin, con los creativos que corren en ellas.",
+"Brand identity":"Identidad de marca","Brands built from zero: name, logo, palette, type and a brand book that keeps every piece consistent.":"Marcas creadas desde cero: nombre, logo, paleta, tipografía y un manual que mantiene cada pieza coherente.",
+"Brand book":"Manual de marca","Applications":"Aplicaciones",
+"Social media content":"Contenido para redes","Posts, carousels and stories designed as one system, so the feed looks like a brand and not like single posts.":"Posts, carruseles e historias diseñados como un sistema, para que el feed se vea como una marca y no como piezas sueltas.",
+"Stories":"Historias","Short animated stories and ads that hook in the first second and a half.":"Historias y anuncios animados que enganchan en el primer segundo y medio.","Kinetic type":"Tipografía cinética",
+"Print & out-of-home":"Impresos y exteriores","The brand outside the screen: fleet wraps, totems, billboards, menus and packaging.":"La marca fuera de la pantalla: rotulación de flota, tótems, vallas, menús y empaques.",
+"Fleet wrap":"Rotulación de flota","Billboards":"Vallas","Packaging":"Empaques","See projects":"Ver proyectos","Open":"Abrir",
 /* dynamic */
 "What I do · ":"Qué hago · ","Ads that pay for themselves.":"Anuncios que se pagan solos.",
 "I set up, traffic and optimize campaigns on Google and Meta, and design the creative that runs in them. When numbers drop, I find the stage that is breaking and fix it.":"Configuro, cargo y optimizo campañas en Google y Meta, y diseño los creativos que corren en ellas. Cuando los números caen, encuentro la etapa que falla y la arreglo.",
@@ -922,7 +939,7 @@ let LANG='en';
 const tr=s=>LANG==='es'&&ES[s]?ES[s]:s;
 const ORIG=new WeakMap();
 function translateStatic(){
-  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const pe=n.parentElement;if(!pe||pe.closest('script,style,.name,#grid,#s-cards,.show-text,#proj,.copy small'))return 2;return n.textContent.trim()?1:2}});
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const pe=n.parentElement;if(!pe||pe.closest('script,style,.name,#grid,#s-list,#s-tiles,#proj,.copy small'))return 2;return n.textContent.trim()?1:2}});
   let n;while(n=w.nextNode()){
     if(!ORIG.has(n))ORIG.set(n,n.textContent);
     const o=ORIG.get(n),k=o.trim().replace(/\s+/g,' ');
@@ -940,13 +957,31 @@ function setLang(l){
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
 
 /* ---------- Data ---------- */
-const SLIDES=[
- {key:'ads',eye:'Google & Meta Ads',title:'Ads that pay for themselves.',desc:'Campaigns built, launched and optimized end to end.',tags:['Google Ads','Meta Ads','Reporting'],card:'Ads & performance',more:'See more ads work'},
- {key:'brand',eye:'Brand design',title:'Brands people remember.',desc:'Identities and brand systems that work in the real world.',tags:['Identity','Brand manual','Applications'],card:'Brand design',more:'See more brand work'},
- {key:'posts',eye:'Posts & motion',title:'Posts that stop the scroll.',desc:'Scroll-stopping posts, carousels and short motion.',tags:['Social posts','Carousels','Motion'],card:'Posts & motion',more:'See more posts'},
- {key:'data',eye:'Data & dashboards',title:'Data anyone can read.',desc:'Dashboards and visual guides that turn numbers into decisions.',tags:['Dashboards','Training guides','KPIs'],card:'Data & dashboards',more:'See more data work'}
+const SERVICES=[
+ {f:'ads',h:'Google & Meta Ads',p:'Campaigns built, launched and optimized end to end, with the creative that runs in them.',tags:['Google Ads','Meta Ads','Reporting'],
+  m:[['home/phone.jpg','home','Home Solutions'],['motion/ct-01.mp4','motion','Cool Time'],['madoka/ad-01.jpg','madoka','Madoka']]},
+ {f:'brand',h:'Brand identity',p:'Brands built from zero: name, logo, palette, type and a brand book that keeps every piece consistent.',tags:['Logo','Brand book','Applications'],
+  m:[['cooltime/bento.jpg','cooltime','Cool Time'],['motion/md-01.mp4','motion','Madoka'],['madoka/bag.jpg','madoka','Madoka']]},
+ {f:'posts',h:'Social media content',p:'Posts, carousels and stories designed as one system, so the feed looks like a brand and not like single posts.',tags:['Posts','Carousels','Stories'],
+  m:[['cooltime/feed.jpg','cooltime','Cool Time'],['motion/ch-02.mp4','motion','Chicha'],['madoka/story-2.jpg','madoka','Madoka']]},
+ {f:'posts',h:'Motion graphics',p:'Short animated stories and ads that hook in the first second and a half.',tags:['Instagram Stories','Reels','Kinetic type'],
+  m:[['motion/ct-02.mp4','motion','Cool Time'],['motion/md-02.mp4','motion','Madoka'],['motion/ch-01.mp4','motion','Chicha']]},
+ {f:'brand',h:'Print & out-of-home',p:'The brand outside the screen: fleet wraps, totems, billboards, menus and packaging.',tags:['Fleet wrap','Billboards','Packaging'],
+  m:[['cooltime/totem.jpg','cooltime','Cool Time'],['home/van.jpg','home','Home Solutions'],['madoka/menu.jpg','madoka','Madoka']]},
+ {f:'data',h:'Data & dashboards',p:'Dashboards and visual guides that turn numbers into decisions.',tags:['Dashboards','Training guides','KPIs'],
+  m:[['p13.jpg','dash','KPI dashboards','28% 50%'],['p09.jpg','training','Training guides','88% 50%'],['p16.jpg','recovery','Performance Recovery Plan','0% 50%']]}
 ];
 const PROJECTS=[
+ {id:'motion',tags:['posts'],title:'Motion Graphics',eye:'Instagram Stories · Motion design',cover:'work/motion/cover.jpg',dir:'motion',
+  meta:['9 stories · 9:16','Cool Time · Madoka · Chicha','Hook in 1.5 s'],
+  challenge:'A static story gets skipped in less than a second. Each brand needed short motion pieces that hook right away and still look like the same system as its feed and ads.',
+  solution:'Three stories per brand, built only with each brand’s own type, color, 3D props and photography: mask reveals, a giant word behind the product, kinetic type and an end card with logo and CTA. Smooth ease-out motion and no template transitions.',
+  result:'9 ready-to-post stories in 1080×1920, 8 to 12 seconds each and silent, so the music is added in Instagram. Concept pieces; phone numbers and handles are placeholders.',
+  blocks:[
+   {k:'01',h:'Cool Time',p:'Air conditioning in motion: the heat drops from 34° to 22° as orange turns blue, a one-minute booking demo, and a three-sign tip in story format.',imgs:['ct-01.mp4','ct-02.mp4','ct-03.mp4'],c:3},
+   {k:'02',h:'Madoka',p:'Slow and cinematic, like the brand: the fire opening through a letterbox, an omakase told in four arches, and the opening night with the 円 and the hanko seal.',imgs:['md-01.mp4','md-02.mp4','md-03.mp4'],c:3},
+   {k:'03',h:'Chicha',p:'Loud and colorful: the mosaic opens and the can drops in, a Salvadoran slang dictionary cut to rhythm, and a park day with paper flags and a countdown. Every piece keeps the +18 note.',imgs:['ch-01.mp4','ch-02.mp4','ch-03.mp4'],c:3}
+  ],imgs:[]},
  {id:'chicha',tags:['brand','ads','posts'],title:'Chicha',eye:'Beverage brand · Packaging · Activations',cover:'work/chicha/cover.jpg',dir:'chicha',
   meta:['Fermented corn drink · El Salvador','Concept brand','Can & bottle launch'],
   challenge:'Chicha, the fermented corn drink of San Juan Nonualco, lives in town festivals and family homes, but on the shelf it competes with beers and rums that don’t speak like us. The brief: launch it as a new option, Salvadoran at heart yet minimal, modern and simple, in a personal can and a wine-style bottle to share.',
@@ -1076,65 +1111,73 @@ function openProject(id){
   document.getElementById('pj-title').textContent=tr(p.title);
   document.getElementById('pj-meta').innerHTML=p.meta.map(m=>`<span>${tr(m)}</span>`).join('');
   document.getElementById('pj-csr').innerHTML=[['Challenge',p.challenge],['Solution',p.solution],['Result',p.result]].filter(r=>r[1]).map(r=>`<div><dt>${tr(r[0])}</dt><dd>${tr(r[1])}</dd></div>`).join('');
-  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}">${b.imgs.map(n=>`<img src="work/${p.dir||'home'}/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
+  document.getElementById('pj-imgs').innerHTML=p.blocks?`<img src="${p.cover}" alt="${p.title}" style="border-radius:16px">`+p.blocks.map(b=>`<div class="pj-blk">${b.h?`<div class="bh"><h4>${b.k?`<small>${b.k}</small>`:''}${tr(b.h)}</h4><p>${tr(b.p)}</p></div>`:''}<div class="pj-g c${b.c||1}">${b.imgs.map(n=>n.endsWith('.mp4')?`<video src="work/${p.dir}/${n}" poster="work/${p.dir}/${n.replace('.mp4','.jpg')}" muted loop playsinline preload="none" aria-label="${p.title}, ${tr(b.h)||'motion'}"></video>`:`<img src="work/${p.dir||'home'}/${n}.jpg" alt="${p.title}, ${tr(b.h)||'piece'}" loading="lazy">`).join('')}</div></div>`).join('')
     :p.imgs.map(n=>`<img src="work/p${pad(n)}.jpg" alt="${p.title}, piece" loading="lazy">`).join('');
   if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
   dlg.scrollTop=0;
+  watchVideos();
 }
+/* motion pieces: play only while visible */
+let vio=null;
+function watchVideos(){
+  if(vio)vio.disconnect();
+  const vs=[...document.querySelectorAll('#pj-imgs video')];if(!vs.length)return;
+  vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting&&!reduce){v.play().catch(()=>{})}else v.pause()}),{root:dlg,threshold:.35});
+  vs.forEach(v=>{vio.observe(v);v.addEventListener('click',()=>{v.paused?v.play().catch(()=>{}):v.pause()})});
+}
+dlg.addEventListener('close',()=>{if(vio)vio.disconnect();document.querySelectorAll('#pj-imgs video').forEach(v=>v.pause())});
 grid.addEventListener('click',e=>{const t=e.target.closest('.tile');if(t)openProject(t.dataset.id)});
 document.getElementById('pj-x').addEventListener('click',()=>dlg.close());
 document.getElementById('pj-contact').addEventListener('click',()=>dlg.close());
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 
-/* ---------- Showcase slider ---------- */
+/* ---------- Services: static list + animated tiles ---------- */
 (function(){
-  const sec=document.getElementById('services'),bgs=[...sec.querySelectorAll('.show-bg')],cards=document.getElementById('s-cards');
-  const text=sec.querySelector('.show-text'),bar=document.getElementById('s-bar');
-  const $=id=>document.getElementById(id);
-  const DUR=6500;let cur=0,t0=performance.now(),paused=false,visible=true,busy=false;
-  function renderCards(){
-    const order=[1,2,3].map(k=>(cur+k)%SLIDES.length);
-    cards.innerHTML=order.map(i=>`<button class="scard" data-i="${i}" aria-label="${tr('Show ')}${tr(SLIDES[i].card)}"><img src="cards/${SLIDES[i].key}.jpg" alt=""><span>${tr(SLIDES[i].card)}</span></button>`).join('');
+  const sec=document.getElementById('services'),list=document.getElementById('s-list'),tiles=document.getElementById('s-tiles'),bar=document.getElementById('s-bar');
+  const N=SERVICES.length,DUR=6000;let cur=0,t0=performance.now(),paused=false,visible=false,items=[],vids=[];
+  // tiles: 3 slots, each holds one layer per service (videos load only when their turn comes)
+  tiles.innerHTML=[0,1,2].map(j=>`<button class="svx-tile" type="button" data-slot="${j}">`+SERVICES.map((s,i)=>{
+    const [src,proj,cap,pos]=s.m[j],v=src.endsWith('.mp4'),st=pos?` style="object-position:${pos}"`:'';
+    const media=v?`<video muted loop playsinline preload="none" poster="work/${src.replace('.mp4','.jpg')}" src="work/${src}"></video>`
+                 :`<img src="work/${src}" alt="" loading="${i?'lazy':'eager'}" decoding="async"${st}>`;
+    return `<figure class="svx-m${i?'':' on'}" style="--d:${j}" data-s="${i}" data-p="${proj}" aria-hidden="${i?'true':'false'}">${media}<figcaption>${v?'<i></i>':''}${cap}</figcaption></figure>`;
+  }).join('')+`</button>`).join('');
+  vids=[...tiles.querySelectorAll('video')];
+  function renderList(){
+    list.innerHTML=SERVICES.map((s,i)=>`<li class="svx-item" aria-current="${i===cur}"><button class="svx-h" type="button" data-i="${i}">${tr(s.h)}</button><div class="svx-body"><div><p>${tr(s.p)}</p><ul class="svx-tags">${s.tags.map(x=>`<li>${tr(x)}</li>`).join('')}</ul><a class="svx-more" href="#work" data-f="${s.f}">${tr('See projects')} →</a></div></div></li>`).join('');
+    items=[...list.children];
+    tiles.querySelectorAll('.svx-tile').forEach(b=>{const m=b.querySelector('.svx-m.on');b.setAttribute('aria-label',tr('Open')+': '+(m?m.querySelector('figcaption').textContent:''))});
   }
-  function setText(s){
-    $('s-eye').querySelector('.s-lt').textContent=tr('What I do');$('s-count').textContent=pad(cur+1)+' / '+pad(SLIDES.length);$('s-title').textContent=tr(s.eye);$('s-desc').textContent=tr(s.desc);
-    $('s-tags').innerHTML=s.tags.map(x=>`<li>${tr(x)}</li>`).join('');
-    const m=$('s-more');m.textContent=tr(s.more)+' →';m.dataset.f=s.key;
-    $('s-idx').textContent=pad(cur+1);
+  function syncVideos(){
+    vids.forEach(v=>{const on=+v.parentElement.dataset.s===cur&&visible&&!document.hidden;
+      if(on){if(v.paused){const p=v.play();if(p)p.catch(()=>{})}}else if(!v.paused)v.pause()});
   }
-  function go(i,fromCard){
-    if(busy||i===cur)return;busy=true;
-    const s=SLIDES[i];
-    // grow the clicked/next card into the background
-    const card=fromCard||cards.querySelector(`[data-i="${i}"]`);
-    if(card&&!reduce&&card.animate){
-      const r=card.getBoundingClientRect(),R=sec.getBoundingClientRect();
-      const g=document.createElement('img');g.className='grow';g.src=`slides/${s.key}.jpg`;
-      Object.assign(g.style,{left:(r.left-R.left)+'px',top:(r.top-R.top)+'px',width:r.width+'px',height:r.height+'px',zIndex:0});
-      sec.querySelector('.show-bgs').appendChild(g);
-      g.animate([{left:(r.left-R.left)+'px',top:(r.top-R.top)+'px',width:r.width+'px',height:r.height+'px',borderRadius:'14px'},
-                 {left:'0px',top:'0px',width:R.width+'px',height:R.height+'px',borderRadius:'0px'}],{duration:850,easing:'cubic-bezier(.7,0,.2,1)',fill:'forwards'})
-       .finished.then(()=>{bgs.forEach((b,k)=>b.classList.toggle('on',k===i));setTimeout(()=>g.remove(),120)});
-    } else bgs.forEach((b,k)=>b.classList.toggle('on',k===i));
-    text.classList.add('out');
-    setTimeout(()=>{cur=i;setText(s);renderCards();text.classList.remove('out');busy=false;},reduce?0:450);
-    t0=performance.now();
+  function go(i){
+    i=(i+N)%N;if(i===cur)return;cur=i;
+    tiles.querySelectorAll('.svx-m').forEach(m=>{const on=+m.dataset.s===i;m.classList.toggle('on',on);m.setAttribute('aria-hidden',!on)});
+    items.forEach((it,k)=>{it.setAttribute('aria-current',k===i);it.style.removeProperty('--k')});
+    tiles.querySelectorAll('.svx-tile').forEach(b=>b.setAttribute('aria-label',tr('Open')+': '+b.querySelector('.svx-m.on figcaption').textContent));
+    t0=performance.now();syncVideos();
   }
-  cards.addEventListener('click',e=>{const c=e.target.closest('.scard');if(c){go(+c.dataset.i,c)}});
-  $('s-next').addEventListener('click',()=>go((cur+1)%SLIDES.length));
-  $('s-prev').addEventListener('click',()=>go((cur-1+SLIDES.length)%SLIDES.length));
-  $('s-more').addEventListener('click',()=>filterWork($('s-more').dataset.f));
-  sec.addEventListener('pointerenter',()=>paused=true);sec.addEventListener('pointerleave',()=>{paused=false;t0=performance.now()-(parseFloat(bar.style.width)||0)/100*DUR});
-  sec.addEventListener('focusin',()=>paused=true);sec.addEventListener('focusout',()=>paused=false);
-  // swipe
-  let sx=null;sec.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
-  sec.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)go((cur+(dx<0?1:-1)+SLIDES.length)%SLIDES.length);sx=null});
-  if('IntersectionObserver' in window)new IntersectionObserver(es=>{visible=es[0].isIntersecting}).observe(sec);
-  renderCards();langHooks.push(()=>{setText(SLIDES[cur]);renderCards()});
+  list.addEventListener('click',e=>{const h=e.target.closest('.svx-h');if(h)go(+h.dataset.i);const m=e.target.closest('.svx-more');if(m)filterWork(m.dataset.f)});
+  tiles.addEventListener('click',e=>{const t=e.target.closest('.svx-tile');if(t)openProject(t.querySelector('.svx-m.on').dataset.p)});
+  document.getElementById('s-next').addEventListener('click',()=>go(cur+1));
+  document.getElementById('s-prev').addEventListener('click',()=>go(cur-1));
+  const stage=sec.querySelector('.svx-stage');let held=0;
+  const freeze=()=>{paused=true},thaw=()=>{paused=false};
+  tiles.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')freeze()});tiles.addEventListener('pointerleave',thaw);
+  sec.addEventListener('focusin',e=>{if(e.target.matches(':focus-visible'))freeze()});sec.addEventListener('focusout',thaw);
+  let sx=null;stage.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  stage.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)go(cur+(dx<0?1:-1));sx=null});
+  if('IntersectionObserver' in window)new IntersectionObserver(es=>{visible=es[0].isIntersecting;syncVideos()},{threshold:.15}).observe(sec);else visible=true;
+  document.addEventListener('visibilitychange',syncVideos);
+  renderList();langHooks.push(renderList);
+  let k=0;
   function tick(now){
-    if(paused||!visible||document.hidden||dlg.open){t0=now-(parseFloat(bar.style.width)||0)/100*DUR}
-    const k=Math.min(1,(now-t0)/DUR);bar.style.width=(k*100)+'%';
-    if(k>=1&&!reduce)go((cur+1)%SLIDES.length);
+    if(paused||!visible||document.hidden||dlg.open)t0=now-k*DUR;
+    k=Math.min(1,(now-t0)/DUR);bar.style.width=(k*100)+'%';
+    if(items[cur])items[cur].style.setProperty('--k',k);
+    if(k>=1){k=0;go(cur+1)}
     requestAnimationFrame(tick);
   }
   if(!reduce)requestAnimationFrame(tick);
