@@ -961,6 +961,8 @@ const ES={
 "Where it started:":"Dónde empezó todo:",
 "I was a Gloria de Kriete Foundation scholar (Programa Oportunidades, 2015–2017), which earned me a full scholarship to study Marketing at UCA.":"Fui becario de la Fundación Gloria de Kriete (Programa Oportunidades, 2015–2017), lo que me llevó a una beca completa para estudiar Mercadeo en la UCA.",
 "Copy":"Copiar","Copied":"Copiado",
+"Team leadership":"Liderazgo de equipos","As a supervisor I grew an account from 0 to 40+ people and built the bonus, QA and coaching systems that keep a team performing.":"Como supervisor llevé una cuenta de 0 a más de 40 personas y creé los sistemas de bonos, QA y coaching que mantienen al equipo rindiendo.",
+"QA & KPIs":"QA y KPIs","See the case":"Ver el caso",
 "Campaigns built, launched and optimized end to end, with the creative that runs in them.":"Campañas creadas, lanzadas y optimizadas de principio a fin, con los creativos que corren en ellas.",
 "Brand identity":"Identidad de marca","Brands built from zero: name, logo, palette, type and a brand book that keeps every piece consistent.":"Marcas creadas desde cero: nombre, logo, paleta, tipografía y un manual que mantiene cada pieza coherente.",
 "Brand book":"Manual de marca","Applications":"Aplicaciones",
@@ -1051,7 +1053,9 @@ const SERVICES=[
  {f:'data',h:'B2B marketing & SEO',p:'LinkedIn content, outbound sequences and SEO that turn a B2B website into a lead source.',tags:['LinkedIn','Outbound','SEO'],
   m:[['b2b/post-1.jpg','b2b','B2B Lead Generation','50% 30%'],['b2b/sequence.jpg','b2b','B2B Lead Generation','0% 50%'],['seo/scorecard.jpg','seo','SEO Audit','0% 50%']]},
  {f:'data',h:'Data & dashboards',p:'Dashboards and visual guides that turn numbers into decisions.',tags:['Dashboards','Training guides','KPIs'],
-  m:[['p13.jpg','dash','KPI dashboards','28% 50%'],['p09.jpg','training','Training guides','88% 50%'],['p16.jpg','recovery','Performance Recovery Plan','0% 50%']]}
+  m:[['p13.jpg','dash','KPI dashboards','28% 50%'],['p09.jpg','training','Training guides','88% 50%'],['p16.jpg','recovery','Performance Recovery Plan','0% 50%']]},
+ {o:'lead',h:'Team leadership',p:'As a supervisor I grew an account from 0 to 40+ people and built the bonus, QA and coaching systems that keep a team performing.',tags:['Coaching','QA & KPIs','Bonus structure'],
+  m:[['../me/group.jpg','lead','The team I led','50% 40%'],['lead/bonus.jpg','lead','Bonus structure','4% 50%'],['../me/award.jpg','lead','Climber of the Year','50% 30%']]}
 ];
 const PROJECTS=[
  {id:'motion',tags:['posts'],title:'Motion Graphics',eye:'Instagram Stories · Motion design',cover:'work/motion/cover.jpg',dir:'motion',
@@ -1334,12 +1338,13 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
     const [src,proj,cap,pos]=s.m[j],v=src.endsWith('.mp4'),st=pos?` style="object-position:${pos}"`:'';
     const media=v?`<video muted loop playsinline preload="none" poster="work/${src.replace('.mp4','.jpg')}" src="work/${src}"></video>`
                  :`<img src="work/${src}" alt="" loading="${i?'lazy':'eager'}" decoding="async"${st}>`;
-    return `<figure class="svx-m${i?'':' on'}" style="--d:${j}" data-s="${i}" data-p="${proj}" aria-hidden="${i?'true':'false'}">${media}<figcaption>${v?'<i></i>':''}${cap}</figcaption></figure>`;
+    return `<figure class="svx-m${i?'':' on'}" style="--d:${j}" data-s="${i}" data-p="${proj}" aria-hidden="${i?'true':'false'}">${media}<figcaption data-cap="${cap}">${v?'<i></i>':''}<span>${cap}</span></figcaption></figure>`;
   }).join('')+`</button>`).join('');
   vids=[...tiles.querySelectorAll('video')];
   function renderList(){
-    list.innerHTML=SERVICES.map((s,i)=>`<li class="svx-item" aria-current="${i===cur}"><button class="svx-h" type="button" data-i="${i}">${tr(s.h)}</button><div class="svx-body"><div><p>${tr(s.p)}</p><ul class="svx-tags">${s.tags.map(x=>`<li>${tr(x)}</li>`).join('')}</ul><a class="svx-more" href="#work" data-f="${s.f}">${tr('See projects')} →</a></div></div></li>`).join('');
+    list.innerHTML=SERVICES.map((s,i)=>`<li class="svx-item" aria-current="${i===cur}"><button class="svx-h" type="button" data-i="${i}">${tr(s.h)}</button><div class="svx-body"><div><p>${tr(s.p)}</p><ul class="svx-tags">${s.tags.map(x=>`<li>${tr(x)}</li>`).join('')}</ul><a class="svx-more" href="#work"${s.o?` data-o="${s.o}"`:` data-f="${s.f}"`}>${tr(s.o?'See the case':'See projects')} →</a></div></div></li>`).join('');
     items=[...list.children];
+    tiles.querySelectorAll('figcaption[data-cap]').forEach(c=>c.querySelector('span').textContent=tr(c.dataset.cap));
     tiles.querySelectorAll('.svx-tile').forEach(b=>{const m=b.querySelector('.svx-m.on');b.setAttribute('aria-label',tr('Open')+': '+(m?m.querySelector('figcaption').textContent:''))});
   }
   function syncVideos(){
@@ -1353,7 +1358,7 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
     tiles.querySelectorAll('.svx-tile').forEach(b=>b.setAttribute('aria-label',tr('Open')+': '+b.querySelector('.svx-m.on figcaption').textContent));
     t0=performance.now();syncVideos();
   }
-  list.addEventListener('click',e=>{const h=e.target.closest('.svx-h');if(h)go(+h.dataset.i);});
+  list.addEventListener('click',e=>{const h=e.target.closest('.svx-h');if(h)go(+h.dataset.i);const m=e.target.closest('.svx-more[data-o]');if(m){e.preventDefault();openProject(m.dataset.o)}});
   tiles.addEventListener('click',e=>{const t=e.target.closest('.svx-tile');if(t)openProject(t.querySelector('.svx-m.on').dataset.p)});
   document.getElementById('s-next').addEventListener('click',()=>go(cur+1));
   document.getElementById('s-prev').addEventListener('click',()=>go(cur-1));
