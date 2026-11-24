@@ -188,6 +188,8 @@ footer .wrap{padding-block:26px;display:flex;justify-content:space-between;flex-
 .tile .cv{aspect-ratio:16/10;border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;background:var(--bg-2)}
 .tile .cv img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .tile:hover .cv img{transform:scale(1.05)}
+.tile .cv .sl{position:absolute;inset:0;opacity:0;transition:opacity .7s ease,transform .6s ease}
+.tile .cv .sl.on{opacity:1}
 .tile .cv b{position:absolute;right:12px;bottom:12px;font:500 12px var(--mono);background:rgba(0,0,0,.8);padding:5px 10px;border-radius:999px;opacity:0;transform:translateY(6px);transition:.3s}
 .tile:hover .cv b,.tile:focus-visible .cv b{opacity:1;transform:none}
 .tile h3{font-size:22px;font-weight:700}
@@ -788,6 +790,55 @@ nav .status{padding:5px 11px 5px 9px;font-size:12px}
 
 /* ---------- Language EN / ES ---------- */
 const ES={
+"My own proposal":"Propuesta propia",
+"Visual identity":"Identidad visual",
+"My own proposal: a high-end Japanese restaurant brand for San Salvador, designed from zero as a visual exercise.":"Propuesta propia: una marca de restaurante japonés de alta gama para San Salvador, diseñada desde cero como ejercicio visual.",
+"A circle with two resting chopsticks as the mark, a sumi, washi and hinoki palette, Cormorant with one Japanese word per piece, and photography where the cooking is the hero.":"Un círculo con dos palillos en reposo como símbolo, una paleta sumi, washi y hinoki, Cormorant con una palabra en japonés por pieza, y fotografía donde la cocina es la protagonista.",
+"Logo system, brand book, 12 Meta ads, feed, carousel, stories and mockups. Food photography is licensed Unsplash imagery, art-directed and color-graded for the brand.":"Sistema de logo, manual de marca, 12 anuncios Meta, feed, carrusel, stories y mockups. Las fotos de comida son de Unsplash con licencia, con dirección de arte y color para la marca.",
+"Photography":"Fotografía",
+"Print & street":"Impresos y calle",
+"Slow and cinematic, like the brand: the fire opening through a letterbox, an omakase told in four arches, and the opening night with the 円 and the hanko seal.":"Lento y cinematográfico, como la marca: el fuego que se abre en franja de cine, un omakase contado en cuatro arcos y la noche de apertura con el 円 y el sello hanko.",
+"As a supervisor I needed the project numbers at hand, visible for my team and for my client, without waiting for a weekly report.":"Como supervisor necesitaba tener la información a la mano, visible para mi equipo y para mi cliente, sobre cómo iban los proyectos, sin esperar un reporte semanal.",
+"I identified that the data lived in scattered trackers, so I built one database in Google Sheets and connected it to Looker Studio. The dashboard updated live, so anyone could see how each project was going at any moment, with client data kept private.":"Identifiqué que los datos estaban regados en varios trackers, así que armé una sola base en Google Sheets y la conecté a Looker Studio. El dashboard se actualizaba en vivo, y cualquiera podía ver cómo iba cada proyecto en el momento, cuidando la privacidad de los datos del cliente.",
+"I achieved a weekly report that updates itself (it used to take me about 3 hours by hand), and my team and my client could follow the progress live.":"Logré que el reporte semanal, que me tomaba unas 3 horas a mano, se actualizara solo, y que mi equipo y mi cliente pudieran seguir el avance en vivo.",
+"Live dashboard":"Dashboard en vivo",
+"The team operations view my team and my client checked during the day, updated live.":"La vista de operaciones que mi equipo y mi cliente revisaban durante el día, actualizada en vivo.",
+"Debt relief operations · Forth":"Operaciones de deuda · Forth",
+"Visual action plans":"Action plans visuales",
+"The team I led lacked training material and clear communication, and the action plans we shared with the client were hard to follow and not very appealing.":"El equipo que lideré carecía de material de entrenamiento y de comunicación clara, y los planes de acción que compartíamos con el cliente eran poco atractivos y difíciles de entender.",
+"I made every action plan more visual and clear, and I built a training library in plain English: step-by-step guides and call flows, process infographics, QA do’s and don’ts with a scorecard and a 30-day onboarding plan, in the colors of Forth, the client.":"Hice cada action plan más visual y claro, y armé una biblioteca de capacitación en inglés sencillo: guías paso a paso y flujos de llamada, infografías de procesos, do’s y don’ts de QA con su scorecard y un plan de onboarding de 30 días, con los colores de Forth, el cliente.",
+"I achieved about 225 tickets solved a month, an average QA score of 94% and new hires ready in 3 weeks instead of 6.":"Logré unos 225 tickets resueltos al mes, un promedio de QA de 94% y personal nuevo listo en 3 semanas en lugar de 6.",
+"An A/C maintenance, installation and repair company had to look reliable on the street and online. I identified that people only remember their A/C when it stops cooling.":"Una empresa de mantenimiento, instalación y reparación de aires acondicionados tenía que verse confiable en la calle y en redes. Identifiqué que la gente solo se acuerda de su aire cuando deja de enfriar.",
+"I redrew the logo in vectors and built the system around one idea: get in through the urgency, earn trust with certified technicians and a written guarantee, and keep the client with maintenance every six months. I used the word “fresco” on purpose: it’s the Salvadoran fruit drink everyone knows, and the same fresh feeling as cool A/C air.":"Redibujé el logo en vectores y armé el sistema alrededor de una idea: entrar por la urgencia, ganar confianza con técnicos certificados y garantía por escrito, y fidelizar con mantenimiento cada seis meses. Usé la palabra “fresco” a propósito: es el fresco de fruta salvadoreño que todos conocemos y la misma frescura del aire acondicionado.",
+"I delivered a brand ready for the street and for paid media: brand book, 12 Meta ads, Google Display, feed, carousel, stories, fleet wrap, uniforms and out-of-home.":"Entregué una marca lista para la calle y para pauta: manual de marca, 12 anuncios Meta, Google Display, feed, carrusel, stories, rotulación de flota, uniformes y publicidad exterior.",
+"Google Ads · Caribbean cruises":"Google Ads · Cruceros en el Caribe",
+"This was a case I had to solve when I arrived at my last company: one of our biggest Google Ads campaigns, for Caribbean cruise bookings, wasn’t performing. It fell at every stage at once: CTR 3.8% → 1.9%, CPL $28 → $62, ROAS 3.5× → 1.4×.":"Este fue un caso que me tocó resolver al llegar a mi última empresa: una de las campañas más grandes en Google Ads, para reservas de cruceros en el Caribe, no estaba funcionando. Cayó en todas las etapas a la vez: CTR 3.8% → 1.9%, CPL $28 → $62, ROAS 3.5× → 1.4×.",
+"Instead of chasing ROAS, I split the problem by stage: attention, traffic and conversion. I identified weak hooks running too long, saturated audiences, ads that didn’t match the landing page and a budget that was never moved. Then I set a plan with one owner per action: pause what loses, move budget to what wins, test new hooks every 2–3 weeks and fix the landing.":"En lugar de perseguir el ROAS, dividí el problema por etapa: atención, tráfico y conversión. Identifiqué ganchos débiles corriendo demasiado tiempo, audiencias saturadas, anuncios que no coincidían con la landing y un presupuesto que nunca se movió. Luego armé un plan con un responsable por acción: pausar lo que pierde, mover presupuesto a lo que gana, probar ganchos nuevos cada 2–3 semanas y arreglar la landing.",
+"I developed a 30-60-90 day roadmap: quick fixes first, structured testing next, then scaling what works. ROAS isn’t fixed directly; I optimized the levers that move it.":"Desarrollé un roadmap de 30-60-90 días: arreglos rápidos primero, pruebas estructuradas después y luego escalar lo que funciona. El ROAS no se arregla directo; optimicé las palancas que lo mueven.",
+"Brand landing page":"Landing de una marca",
+"One of my campaign managers was getting a low SEO score on a brand we worked with, so we had to dig in. The landing page looked fine, but it ranked nowhere.":"Una de mis campaign managers estaba teniendo baja puntuación de SEO con una de las marcas con las que trabajábamos, así que tuvimos que indagar. La landing se veía bien, pero no aparecía en Google.",
+"I identified that the page took 4.8 seconds to load on mobile, had no H1, a title that said “Home” and half its pages out of Google’s index. I ran a full audit with PageSpeed Insights, Search Console and a site crawl, made a keyword map with one keyword per page and rewrote titles, metas and headings.":"Identifiqué que la página tardaba 4.8 segundos en cargar en móvil, no tenía H1, el title decía “Home” y la mitad de sus páginas estaban fuera del índice de Google. Hice una auditoría completa con PageSpeed Insights, Search Console y un rastreo del sitio, armé un mapa de palabras clave con una por página y reescribí titles, metas y encabezados.",
+"I developed the WordPress fixes in three sprints and a 90-day plan with weekly tracking. Mobile performance went from 38 to 91, LCP from 4.8 s to 1.9 s, and 27 issues were fixed. Figures shown are example audit data.":"Desarrollé los arreglos en WordPress en tres sprints y un plan de 90 días con seguimiento semanal. El rendimiento móvil pasó de 38 a 91, el LCP de 4.8 s a 1.9 s y se resolvieron 27 problemas. Las cifras son datos de auditoría de ejemplo.",
+"An entrepreneur couple found me on a freelance platform to create their roofing and home-repair brand and communicate it in the U.S., mostly to Hispanic families who need the repair now but can’t pay it all at once.":"Una pareja de emprendedores me buscó a través de una plataforma de trabajo freelance para crear su marca de techos y reparaciones y comunicarla en EE. UU., sobre todo a familias hispanas que necesitan reparar ya, pero no pueden pagarlo de una vez.",
+"We reached the graphic style together with the client. I built the brand from zero and launched it with a market-penetration strategy: lead with credit on the repair (up to 25 years), prove trust with real before/after work and a license, and close with a free inspection. English for the hook, Spanish for the trust.":"Llegamos al estilo gráfico junto con el cliente. Construí la marca desde cero y la lancé con una estrategia de penetración de mercado: entrar con el crédito en la reparación (hasta 25 años), demostrar confianza con trabajos reales de antes/después y licencia, y cerrar con una inspección gratis. Inglés para el gancho, español para la confianza.",
+"I delivered a complete brand ready to scale: identity, brand book, launch posts, a paid-social system for Meta and Google, fleet wrap and out-of-home.":"Entregué una marca completa y lista para escalar: identidad, brand book, posts de lanzamiento, un sistema de pauta para Meta y Google, rotulación de flota y publicidad exterior.",
+"Chicha, the fermented corn drink of San Juan Nonualco, lives in town festivals and family homes, but on the shelf it competes with beers and rums that don’t speak like us. My proposal: launch it as a new option, Salvadoran at heart yet minimal, modern and simple, in a personal can and a wine-style bottle to share.":"La chicha, la bebida fermentada de maíz de San Juan Nonualco, vive en fiestas patronales y casas de pueblo, pero en la tienda compite con cervezas y rones que no hablan como nosotros. Mi propuesta: lanzarla como una nueva opción, salvadoreña de corazón pero mínima, moderna y simple, en una lata personal y una botella tipo vino para compartir.",
+"A concept brand I proposed, ready to launch: 17-page brand book, 3D can and bottle with full labels, 12 Meta ads, 3 campaigns with Google Display, feed, carousel, stories, mockups and park and fair activations. Every piece closes with a responsible-drinking line. Background photos are licensed Unsplash imagery; packaging, tent and giant can are my own 3D renders.":"Una marca conceptual que propuse, lista para lanzar: manual de 17 páginas, lata y botella en 3D con etiquetas completas, 12 anuncios Meta, 3 campañas con Google Display, feed, carrusel, stories, mockups y activaciones en parque y feria. Cada pieza cierra con un mensaje de consumo responsable. Las fotos de fondo son de Unsplash con licencia libre; envases, carpa y lata gigante son renders 3D propios.",
+"Print":"Impresos",
+"Business cards, a tag key ring and the brand book.":"Tarjetas, un llavero de etiqueta y el manual de marca.",
+"Agent → Team Lead → Supervisor":"Agente → Team Lead → Supervisor",
+"People management · Glass Mountain & EMAYA":"Gestión de personas · Glass Mountain y EMAYA",
+"Leading people is never one situation, it’s many at once: someone who resists feedback, a high performer with attitude, new hires still learning and a core tired of carrying the rest. I’ve seen it from every side: I started as an agent, was promoted to team lead and then to supervisor.":"Liderar personas nunca es una sola situación, son muchas a la vez: alguien que no acepta feedback, un buen elemento con actitud difícil, gente nueva que todavía aprende y un núcleo cansado de cargar con el resto. Lo he vivido desde todos los lados: empecé como agente, me promovieron a team lead y luego a supervisor.",
+"I lead up close and with clear rules. I listen first, set the same standard for everyone and give each person the conversation they need. I share the numbers openly, recognize good work in public and correct in private, and I build processes so the team works well even when I’m not in the room. We set the goals together and we reach them together.":"Lidero de cerca y con reglas claras. Escucho primero, pongo el mismo estándar para todos y le doy a cada persona la conversación que necesita. Comparto los números abiertamente, reconozco en público y corrijo en privado, y armo procesos para que el equipo funcione bien aunque yo no esté. Las metas las ponemos juntos y las logramos juntos.",
+"At Glass Mountain I led 20+ agents and a team lead, and I won Climber of the Year 2024. At EMAYA I turned a falling team around and left systems that kept working: a bonus structure, a QA framework and a weekly coaching rate.":"En Glass Mountain lideré a más de 20 agentes y un team lead, y gané Climber of the Year 2024. En EMAYA levanté un equipo que venía cayendo y dejé sistemas que siguieron funcionando: estructura de bonos, un marco de QA y un coaching rate semanal.",
+"Part 1 · Glass Mountain":"Parte 1 · Glass Mountain",
+"On the Forth account I went from agent to team lead to supervisor in under 3 years. I led 20+ agents across two lines of business and one team lead.":"En la cuenta de Forth pasé de agente a team lead y a supervisor en menos de 3 años. Lideré a más de 20 agentes en dos líneas de negocio y a un team lead.",
+"What I built":"Lo que construí",
+"I designed the SOPs, the QA structure, hiring screening, onboarding, talent and development, and a bonus system for team members.":"Diseñé los SOPs, la estructura de QA, el hiring screening, el onboarding, talent & development y un sistema de bonificación para los miembros del equipo.",
+"Part 2 · EMAYA":"Parte 2 · EMAYA",
+"Campaigns were falling and every profile was in the same room. Same language, same standard, a different conversation for each one.":"Las campañas venían cayendo y todos los perfiles estaban en el mismo cuarto. El mismo lenguaje, el mismo estándar y una conversación distinta para cada uno.",
+"Reading the team":"Leyendo al equipo",
+"Skill and motivation: high motivation and high skill, I delegate; high motivation and low skill, I guide; low motivation and high skill, I motivate; low and low, I direct. The hardest one was the high performer with attitude.":"Habilidad y motivación: alta motivación y alta habilidad, delego; alta motivación y poca habilidad, guío; poca motivación y alta habilidad, motivo; poca y poca, dirijo. El más difícil fue el buen elemento con actitud difícil.",
 "Auto Shop JB":"Auto Shop JB",
 "View live site":"Ver sitio en vivo",
 "Brand from zero · Car dealership · Website & paid social":"Marca desde cero · Venta de vehículos · Sitio web y pauta",
@@ -1104,7 +1155,7 @@ const PROJECTS=[
   result:'18 ready-to-post stories in 1080×1920, 8 to 15 seconds each and silent, so the music is added in Instagram. Concept pieces; phone numbers and handles are placeholders.',
   blocks:[
    {k:'01',h:'Cool Time',p:'Air conditioning in motion: the heat drops from 34° to 22° as orange turns blue, a one-minute booking demo, and a three-sign tip in story format.',imgs:['ct-01.mp4','ct-02.mp4','ct-03.mp4'],c:3},
-   {k:'02',h:'Madoka',p:'Loud fast-food energy: “trying something new isn’t expensive anymore” slammed in to the beat, a Wok combo whose price drops to $4.99, and a menu roulette that stops on what you crave.',imgs:['md-01.mp4','md-02.mp4','md-03.mp4'],c:3},
+   {k:'02',h:'Madoka',p:'Slow and cinematic, like the brand: the fire opening through a letterbox, an omakase told in four arches, and the opening night with the 円 and the hanko seal.',imgs:['md-01.mp4','md-02.mp4','md-03.mp4'],c:3},
    {k:'03',h:'Chicha San Juan Nonualco',p:'Loud and colorful: the mosaic opens and the can drops in, a Salvadoran slang dictionary cut to rhythm, and a park day with paper flags and a countdown. Every piece keeps the +18 note.',imgs:['ch-01.mp4','ch-02.mp4','ch-03.mp4'],c:3},
    {k:'04',h:'Inmobiliaria JB',p:'Viral formats for real estate: a year of construction in 10 seconds, from blueprint to the real house, a POV of a new rental room by room, and a pick-one with three homes for the same budget.',imgs:['jb-01.mp4','jb-02.mp4','jb-03.mp4'],c:3},
    {k:'05',h:'Auto Shop JB',p:'Price first, like the brand: a “price by inbox” reply crossed out before three cars drop their tags, cash or monthly payments with live sliders, and a pick-one with three cars under $250 a month.',imgs:['as-01.mp4','as-02.mp4','as-03.mp4'],c:3},
@@ -1137,17 +1188,12 @@ const PROJECTS=[
    {k:'02',h:'Identity',p:'The price tag on the windshield and the tag on the key ring, made into one mark. Graphite, bone and steel, with license-plate yellow used only where the price or the next step is.',imgs:['bento']},
    {k:'',h:'',p:'',imgs:['bb-logo','bb-construction','bb-versions','bb-color'],c:2},
    {k:'03',h:'The website',p:'Built to beat the local dealer sites: 12 popular cars in El Salvador, filters by sedan, SUV and pick-up, a cash or monthly switch on every card, a payment calculator and a trade-in section. Open the live site to try it.',imgs:['desktop']},
-   {k:'',h:'',p:'',imgs:['site-full']},
-   {k:'',h:'',p:'',imgs:['site-mobile']},
    {k:'04',h:'Paid social',p:'One car per ad, the model as the giant word behind it and the tag always in the same place: Hilux, Corolla, RAV4, Tacoma, Sportage and Civic, plus cash vs. monthly, trade-in, 24-hour credit and under $250 a month.',imgs:['ad-01','ad-02','ad-03','ad-04','ad-06','ad-08'],c:3},
    {k:'',h:'',p:'',imgs:['floating','phone'],c:2},
-   {k:'05',h:'Price system',p:'Cash price, monthly payment and a spec sheet in the same order on every car: mileage, engine, transmission and drive. The same tag goes on the window at the lot.',imgs:['bb-price']},
-   {k:'',h:'',p:'',imgs:['glass']},
-   {k:'06',h:'Stories & feed',p:'Lot opening, a sedan-SUV-or-pick-up poll, the one-minute payment calculator and a new arrival.',imgs:['story-1','story-2','story-3','story-4'],c:4},
+   {k:'05',h:'Stories & feed',p:'Lot opening, a sedan-SUV-or-pick-up poll, the one-minute payment calculator and a new arrival.',imgs:['story-1','story-2','story-3','story-4'],c:4},
    {k:'',h:'',p:'',imgs:['profile','feed'],c:2},
-   {k:'07',h:'In motion',p:'Three stories that put the price first: the “price by inbox” reply crossed out before three cars drop their tags, cash or monthly payments with live sliders, and a “which one would you take?” with three cars under $250 a month.',imgs:['as-01.mp4','as-02.mp4','as-03.mp4'],c:3},
-   {k:'08',h:'Voice & print',p:'Salvadoran and exact: “Pagalo en cuotas desde $218 al mes”, never “financing available*”. Business cards, a tag key ring and the brand book.',imgs:['bb-voice']},
-   {k:'',h:'',p:'',imgs:['card','bb-photo'],c:2},
+   {k:'06',h:'In motion',p:'Three stories that put the price first: the “price by inbox” reply crossed out before three cars drop their tags, cash or monthly payments with live sliders, and a “which one would you take?” with three cars under $250 a month.',imgs:['as-01.mp4','as-02.mp4','as-03.mp4'],c:3},
+   {k:'07',h:'Print',p:'Business cards, a tag key ring and the brand book.',imgs:['card','bb-photo'],c:2},
    {k:'',h:'',p:'',imgs:['ad-05','ad-07','ad-09'],c:3}
   ],imgs:[]},
  {id:'jb',tags:['brand','ads','posts'],title:'Inmobiliaria JB',eye:'Brand from zero · Luxury real estate · Paid social',cover:'work/jb/cover.jpg',dir:'jb',
@@ -1174,9 +1220,9 @@ const PROJECTS=[
   ],imgs:[]},
  {id:'chicha',tags:['brand','ads','posts'],title:'Chicha San Juan Nonualco',eye:'Beverage brand · Packaging · Activations',cover:'work/chicha/cover.jpg',dir:'chicha',
   meta:['Fermented corn drink · El Salvador','Concept brand','Can & bottle launch'],
-  challenge:'Chicha, the fermented corn drink of San Juan Nonualco, lives in town festivals and family homes, but on the shelf it competes with beers and rums that don’t speak like us. The brief: launch it as a new option, Salvadoran at heart yet minimal, modern and simple, in a personal can and a wine-style bottle to share.',
+  challenge:'Chicha, the fermented corn drink of San Juan Nonualco, lives in town festivals and family homes, but on the shelf it competes with beers and rums that don’t speak like us. My proposal: launch it as a new option, Salvadoran at heart yet minimal, modern and simple, in a personal can and a wine-style bottle to share.',
   solution:'I kept the logo exactly as it is and built a bone-and-ink system where the traditional colors only live in the C, the Llort-style pattern and a four-color ribbon. The voice is pure Salvadoran slang (“Lo nuestro también se brinda”, “Pa’ los cheros”), the packaging is modeled in 3D, and the brand steps out into parks and national fairs.',
-  result:'A launch-ready concept brand: 17-page brand book, 3D can and bottle with full labels, 12 Meta ads, 3 campaigns with Google Display, feed, carousel, stories, mockups and park and fair activations. Every piece closes with a responsible-drinking line. Background photos are licensed Unsplash imagery; packaging, tent and giant can are my own 3D renders.',
+  result:'A concept brand I proposed, ready to launch: 17-page brand book, 3D can and bottle with full labels, 12 Meta ads, 3 campaigns with Google Display, feed, carousel, stories, mockups and park and fair activations. Every piece closes with a responsible-drinking line. Background photos are licensed Unsplash imagery; packaging, tent and giant can are my own 3D renders.',
   blocks:[
    {k:'01',h:'Where it started',p:'The original Chicha sheet: the illustrated C, the hand-lettered “San Juan Nonualco” and a pattern of town life, made for apparel and gifts. The logo stays exactly as it is.',imgs:['orig-1','orig-2'],c:2},
    {k:'02',h:'The insight',p:'“What’s ours was always shared. It just needed a brand that felt like today.” Chicha enters the market as a new, natural option for adults 25 to 40, never as folklore.',imgs:['bb-strategy']},
@@ -1196,42 +1242,41 @@ const PROJECTS=[
    {k:'',h:'',p:'',imgs:['fair','bb-activations'],c:2},
    {k:'',h:'',p:'',imgs:['ad-09','ad-10','feed'],c:3}
   ],imgs:[]},
- {id:'madoka',tags:['brand','ads','posts'],title:'Madoka',eye:'Brand refresh · Chinese fast food · Motion',cover:'work/madoka/cover.jpg',dir:'madoka',
-  meta:['Wok & dim sum · San Salvador','Concept brand','Young, mainstream audience'],
-  challenge:'Madoka started as a high-end Japanese restaurant. The new brief: keep the name and the logo, but turn it into Chinese fast food for a young, mainstream Salvadoran audience. More commercial and more fun, without looking cheap.',
-  solution:'One idea runs everything: trying something new isn’t expensive anymore. The 円 bowl and its chopsticks stay; around them, a louder palette of wok red, amber, cream and ink, Anton headlines with one italic word, real food cut out on flat color, price bursts and fast-food motion with slam-ins, bounces and flashes.',
-  result:'A full refresh ready to launch: 12-page brand book, 12 Meta ads, feed, carousel, stories, 3 campaigns with Google Display, photo mockups from phone to takeout bag, and 4 animated spots. Concept project; food photography is licensed Unsplash imagery, prices and contact details are samples.',
+ {id:'madoka',tags:['brand','ads','posts'],title:'Madoka',eye:'Brand from zero · Concept brand · Paid social',cover:'work/madoka/cover.jpg',dir:'madoka',
+  meta:['Japanese dining · San Salvador','My own proposal','Visual identity'],
+  challenge:'My own proposal: a high-end Japanese restaurant brand for San Salvador, designed from zero as a visual exercise.',
+  solution:'A circle with two resting chopsticks as the mark, a sumi, washi and hinoki palette, Cormorant with one Japanese word per piece, and photography where the cooking is the hero.',
+  result:'Logo system, brand book, 12 Meta ads, feed, carousel, stories and mockups. Food photography is licensed Unsplash imagery, art-directed and color-graded for the brand.',
   blocks:[
-   {k:'01',h:'Same logo, new appetite',p:'The name and the 円 bowl crossed by chopsticks stay exactly the same. What changes is the energy: wok red first, amber for the craving, combos from $3.49.',imgs:['bb-02']},
-   {k:'',h:'',p:'',imgs:['bb-03','bb-04','bb-05','bb-06'],c:2},
-   {k:'02',h:'Food that jumps off the screen',p:'Real photography, cut out and dropped on flat color with a real shadow. A giant word behind, the food in the middle, the price in front.',imgs:['bb-07','bb-08'],c:2},
-   {k:'03',h:'Paid social',p:'One idea per ad, always with a price: try something new, the Wok combo, dim sum, the bao, spicy wings, sharing for two.',imgs:['ad-02','ad-03','ad-04','ad-05','ad-07','ad-08'],c:3},
+   {k:'01',h:'Identity',p:'',imgs:['bento']},
+   {k:'',h:'',p:'',imgs:['bb-logo','bb-versions','bb-color','bb-type'],c:2},
+   {k:'02',h:'Photography',p:'',imgs:['bb-photo']},
+   {k:'03',h:'Paid social',p:'',imgs:['ad-01','ad-02','ad-03','ad-04','ad-06','ad-07'],c:3},
    {k:'',h:'',p:'',imgs:['phone','floating'],c:2},
-   {k:'',h:'',p:'',imgs:['ad-01','ad-06','ad-09','ad-10','ad-11','ad-12'],c:3},
-   {k:'04',h:'Motion with fast-food energy',p:'Slam-ins, elastic bounces, a price that drops from $12.99 to $4.99, color flashes and a camera shake on every hit. A menu roulette that stops on what you crave.',imgs:['m-01.mp4','m-02.mp4','m-03.mp4'],c:3},
-   {k:'05',h:'Carousel & stories',p:'“Build your bowl in 4 steps” as one panoramic carousel, plus stories for the opening, a dim sum vs wok poll, ordering in one tap and a 2×1 dim sum Tuesday.',imgs:['carousel']},
+   {k:'',h:'',p:'',imgs:['bb-system']},
+   {k:'',h:'',p:'',imgs:['ad-08','ad-10','ad-11'],c:3},
+   {k:'04',h:'Carousel & stories',p:'',imgs:['carousel']},
    {k:'',h:'',p:'',imgs:['story-1','story-2','story-3','story-4'],c:4},
    {k:'',h:'',p:'',imgs:['profile','google'],c:2},
-   {k:'06',h:'On the street',p:'The takeout box, the kraft bag with the badge sticker and a lightbox that you can spot from the bus.',imgs:['box','bag'],c:2},
-   {k:'',h:'',p:'',imgs:['lightbox','bento'],c:2},
-   {k:'',h:'',p:'',imgs:['bb-11','bb-12'],c:2}
+   {k:'05',h:'Print & street',p:'',imgs:['card']},
+   {k:'',h:'',p:'',imgs:['bag','menu'],c:2},
+   {k:'',h:'',p:'',imgs:['lightbox','feed'],c:2}
   ],imgs:[]},
  {id:'home',tags:['brand','ads','posts'],title:'Home Solutions',eye:'Brand from zero · Launch strategy · Paid social',cover:'work/home/cover.jpg',
   meta:['U.S. roofing & repairs','EN / ES','Market penetration'],
-  challenge:'A new roofing and home-repair company had to win homeowners in a crowded U.S. market, mostly Hispanic families who need the repair now but can’t pay it all at once.',
-  solution:'I built the brand from zero and launched it with a market-penetration strategy: lead with credit on the repair (up to 25 years), prove trust with real before/after work and a license, and close with a free inspection. Bilingual: English for the hook, Spanish for the trust.',
-  result:'A complete, scalable brand: identity, brand book, launch posts, a paid-social system for Meta and Google, fleet wrap and out-of-home.',
+  challenge:'An entrepreneur couple found me on a freelance platform to create their roofing and home-repair brand and communicate it in the U.S., mostly to Hispanic families who need the repair now but can’t pay it all at once.',
+  solution:'We reached the graphic style together with the client. I built the brand from zero and launched it with a market-penetration strategy: lead with credit on the repair (up to 25 years), prove trust with real before/after work and a license, and close with a free inspection. English for the hook, Spanish for the trust.',
+  result:'I delivered a complete brand ready to scale: identity, brand book, launch posts, a paid-social system for Meta and Google, fleet wrap and out-of-home.',
   blocks:[
    {k:'01',h:'Where it started',p:'The first launch posts. One message per ad: credit, speed, durability.',imgs:['orig-1','orig-2','orig-3'],c:3},
-   {k:'02',h:'The insight',p:'“Leaks don’t wait for payday.” People know they need the repair; what stops them is how to pay for it.',imgs:['bb-strategy']},
-   {k:'03',h:'Identity',p:'Red circle for urgency and protection, the home at the center, a friendly lowercase wordmark and a solid SOLUTIONS bar.',imgs:['bento']},
+   {k:'02',h:'Identity',p:'Red circle for urgency and protection, the home at the center, a friendly lowercase wordmark and a solid SOLUTIONS bar.',imgs:['bento']},
    {k:'',h:'',p:'',imgs:['bb-logo','bb-versions','bb-color','bb-type'],c:2},
-   {k:'04',h:'Paid social',p:'Ads with a visual hook in the first second: a credit card, a leak, a before/after slider, a $89/mo price, a chat in Spanish.',imgs:['ad-01','ad-02','ad-03','ad-04','ad-05','ad-11'],c:3},
+   {k:'03',h:'Paid social',p:'Ads with a visual hook in the first second: a credit card, a leak, a before/after slider, a $89/mo price, a chat in Spanish.',imgs:['ad-01','ad-02','ad-03','ad-04','ad-05','ad-11'],c:3},
    {k:'',h:'',p:'',imgs:['phone','floating'],c:2},
-   {k:'05',h:'Carousel & stories',p:'“Fix it now. Pay over time.” A panoramic carousel that explains the credit in three steps, plus stories with a poll, a calculator and a countdown.',imgs:['carousel']},
+   {k:'04',h:'Carousel & stories',p:'“Fix it now. Pay over time.” A panoramic carousel that explains the credit in three steps, plus stories with a poll, a calculator and a countdown.',imgs:['carousel']},
    {k:'',h:'',p:'',imgs:['story-1','story-2','story-3','story-4'],c:4},
    {k:'',h:'',p:'',imgs:['profile','google'],c:2},
-   {k:'06',h:'Out in the street',p:'Built for how roofing is sold in the U.S.: a wrapped Ford Transit, a city totem, a mall lightbox and a highway billboard.',imgs:['van'],c:1},
+   {k:'05',h:'Out in the street',p:'Built for how roofing is sold in the U.S.: a wrapped Ford Transit, a city totem, a mall lightbox and a highway billboard.',imgs:['van'],c:1},
    {k:'',h:'',p:'',imgs:['totem','lightbox'],c:2},
    {k:'',h:'',p:'',imgs:['billboard','uniforms'],c:2}
   ],imgs:[]},
@@ -1253,10 +1298,10 @@ const PROJECTS=[
    {k:'08',h:'Campaign tracking',p:'A UTM naming convention, a monthly view by channel and MQLs per week, pulled from HubSpot and GA4 into Looker Studio every Monday.',imgs:['tracking']}
   ],imgs:[]},
  {id:'seo',tags:['data'],title:'SEO Audit',eye:'Technical SEO · Keywords · WordPress',cover:'work/seo/card.jpg',dir:'seo',
-  meta:['Concept case · B2B landing page','Core Web Vitals · Search Console','Example audit data'],
-  challenge:'The same staffing firm’s main landing page looked fine and ranked nowhere: 4.8 seconds to load on mobile, no H1, a title tag that said “Home” and half the pages out of Google’s index.',
-  solution:'A full audit with PageSpeed Insights, Search Console and a site crawl, then a keyword map with one keyword per page, a rewrite of titles, metas and headings, and WordPress fixes in three sprints: images, plugins, caching, schema, sitemap and internal links.',
-  result:'Mobile performance 38 → 91, LCP 4.8 s → 1.9 s, 27 issues fixed and a 90-day plan with weekly tracking in Search Console, GA4 and HubSpot. Figures shown are example audit data.',
+  meta:['Brand landing page','Core Web Vitals · Search Console','Example audit data'],
+  challenge:'One of my campaign managers was getting a low SEO score on a brand we worked with, so we had to dig in. The landing page looked fine, but it ranked nowhere.',
+  solution:'I identified that the page took 4.8 seconds to load on mobile, had no H1, a title that said “Home” and half its pages out of Google’s index. I ran a full audit with PageSpeed Insights, Search Console and a site crawl, made a keyword map with one keyword per page and rewrote titles, metas and headings.',
+  result:'I developed the WordPress fixes in three sprints and a 90-day plan with weekly tracking. Mobile performance went from 38 to 91, LCP from 4.8 s to 1.9 s, and 27 issues were fixed. Figures shown are example audit data.',
   blocks:[
    {k:'',h:'',p:'',imgs:['cover']},
    {k:'01',h:'Audit scorecard',p:'Core Web Vitals, Lighthouse scores and indexing before and after, plus the 27 issues found ranked by severity.',imgs:['scorecard']},
@@ -1266,24 +1311,26 @@ const PROJECTS=[
    {k:'05',h:'90-day plan & tracking',p:'Fix the base, build the pages, earn authority. Reported every week with Search Console, GA4, HubSpot and PageSpeed.',imgs:['plan']}
   ],imgs:[]},
  {id:'recovery',tags:['ads','data'],title:'Google & Meta Ads KPIs',eye:'Google Ads · Meta Ads · Performance KPIs',cover:'work/p16.jpg',dir:'.',
-  meta:['Paid media audit','Funnel diagnosis','30-60-90 days'],
-  challenge:'I take paid media accounts that stopped performing and bring them back: I audit the funnel stage by stage, find what is really breaking, cut wasted spend and rebuild creative, targeting and landing pages. This was one of the most complex cases I’ve solved: performance fell at every stage at once across Google, Meta, LinkedIn and email. CTR 3.8% → 1.9%, CPL $28 → $62, ROAS 3.5× → 1.4×.',
-  solution:'Instead of chasing ROAS, I split the problem by stage (attention, traffic, conversion) and traced how each drop fed the next. The causes: weak hooks running too long, saturated audiences, an ad-to-landing mismatch and budget that was never reallocated. Then a plan with one owner per action: pause what loses, move budget to what wins, test new hooks every 2–3 weeks, tighten segments and fix the landing.',
-  result:'A 30-60-90 day roadmap: quick fixes first, structured testing next, then scaling what works. We don’t fix ROAS directly, we optimize the drivers that move it.',
+  meta:['Google Ads · Caribbean cruises','Funnel diagnosis','30-60-90 days'],
+  challenge:'This was a case I had to solve when I arrived at my last company: one of our biggest Google Ads campaigns, for Caribbean cruise bookings, wasn’t performing. It fell at every stage at once: CTR 3.8% → 1.9%, CPL $28 → $62, ROAS 3.5× → 1.4×.',
+  solution:'Instead of chasing ROAS, I split the problem by stage: attention, traffic and conversion. I identified weak hooks running too long, saturated audiences, ads that didn’t match the landing page and a budget that was never moved. Then I set a plan with one owner per action: pause what loses, move budget to what wins, test new hooks every 2–3 weeks and fix the landing.',
+  result:'I developed a 30-60-90 day roadmap: quick fixes first, structured testing next, then scaling what works. ROAS isn’t fixed directly; I optimized the levers that move it.',
   blocks:[
    {k:'01',h:'How one drop fed the next',p:'Lower relevance pushed CTR down and CPM up, traffic got more expensive, and a weak conversion rate kept inflating CPL. Fixing one metric alone would not have been enough.',imgs:['p17']},
    {k:'02',h:'Root causes',p:'Four causes behind the numbers: weak messaging, saturated targeting, a funnel that lost people on the landing and slow optimization.',imgs:['p18']},
    {k:'03',h:'Action plan',p:'Audit, reallocate budget, launch a new creative strategy, optimize targeting and fix the landing, each with its key points and expected impact.',imgs:['p19','p20']},
    {k:'04',h:'30-60-90 day roadmap',p:'Campaign and team moving together: quick fixes in the first 30 days, structured testing at 60 and scaling winners at 90.',imgs:['p24']}
   ],imgs:[]},
- {id:'lead',tags:['data'],title:'Team Leadership',eye:'People management · Supervisor',cover:'work/lead/card.jpg',dir:'lead',
-  meta:['Role: Supervisor','5 agents · 2 campaign managers · 2 in training','Bonus · QA · Coaching rate'],
-  challenge:'Leading a team is never one situation, it’s many at once. Here the campaigns were falling and every profile was in the same room: a high performer with attitude, people who resisted feedback and complained openly, bench members still learning and a reliable core tired of carrying the rest. Instructions had to be repeated and there was no teamwork culture.',
-  solution:'I read the situation critically before acting: talent wasn’t the problem, structure was. Expectations were unclear, feedback left no record and effort had no link to reward. So I mapped each person by skill and will, set the same standard for everyone and gave each one a different conversation: coaching, ownership, direct feedback with a signed commitment, or a clear boundary.',
-  result:'Beyond fixing the dynamics, I left systems that kept working: a bonus structure I proposed and implemented, a QA framework the whole team scores the same way, and a feedback and acknowledgement control I reported every week as my coaching rate.',
+ {id:'lead',tags:['data'],title:'Team Leadership',eye:'People management · Glass Mountain & EMAYA',cover:'work/lead/card.jpg',dir:'lead',
+  meta:['Agent → Team Lead → Supervisor','Glass Mountain · EMAYA','Climber of the Year 2024'],
+  challenge:'Leading people is never one situation, it’s many at once: someone who resists feedback, a high performer with attitude, new hires still learning and a core tired of carrying the rest. I’ve seen it from every side: I started as an agent, was promoted to team lead and then to supervisor.',
+  solution:'I lead up close and with clear rules. I listen first, set the same standard for everyone and give each person the conversation they need. I share the numbers openly, recognize good work in public and correct in private, and I build processes so the team works well even when I’m not in the room. We set the goals together and we reach them together.',
+  result:'At Glass Mountain I led 20+ agents and a team lead, and I won Climber of the Year 2024. At EMAYA I turned a falling team around and left systems that kept working: a bonus structure, a QA framework and a weekly coaching rate.',
   blocks:[
-   {k:'',h:'',p:'',imgs:['cover']},
-   {k:'01',h:'Reading the team',p:'Four profiles, four approaches. The hardest one was the high performer with attitude: keep the results, but make behavior part of the goal.',imgs:['profiles']},
+   {k:'A',h:'Part 1 · Glass Mountain',p:'On the Forth account I went from agent to team lead to supervisor in under 3 years. I led 20+ agents across two lines of business and one team lead.',imgs:['glass']},
+   {k:'',h:'What I built',p:'I designed the SOPs, the QA structure, hiring screening, onboarding, talent and development, and a bonus system for team members.',imgs:['../../certs/climber-of-the-year']},
+   {k:'B',h:'Part 2 · EMAYA',p:'Campaigns were falling and every profile was in the same room. Same language, same standard, a different conversation for each one.',imgs:['cover']},
+   {k:'01',h:'Reading the team',p:'Skill and motivation: high motivation and high skill, I delegate; high motivation and low skill, I guide; low motivation and high skill, I motivate; low and low, I direct. The hardest one was the high performer with attitude.',imgs:['profiles']},
    {k:'02',h:'Challenges & action plan',p:'Not receptive to feedback, no teamwork culture, instructions repeated over and over. The plan: clear KPIs per role, weekly 1:1s, feedback based on data and recognition for good work.',imgs:['../p21','../p22']},
    {k:'03',h:'Follow-up with a record',p:'Every issue gets a severity level and a follow-up: a private conversation, the impact on the team, clear expectations and tracking until it improves.',imgs:['../p23']},
    {k:'04',h:'Bonus structure',p:'Proposed and implemented: a gate to qualify, a weighted scorecard for results and behavior, and payout tiers every agent can calculate on their own.',imgs:['bonus']},
@@ -1292,9 +1339,9 @@ const PROJECTS=[
   ],imgs:[]},
  {id:'cooltime',tags:['brand','ads','posts'],title:'Cool Time',eye:'Brand system · Paid social · Out-of-home',cover:'work/cooltime/cover.jpg',dir:'cooltime',
   meta:['A/C services · San Salvador','Spanish first','Urgency to loyalty'],
-  challenge:'An air-conditioning maintenance, installation and repair company had to look reliable on the street and online, in a market where people only remember their A/C when it stops cooling.',
-  solution:'I redrew the logo as clean vectors and built a full system around one idea: get in through the urgency (“Is your A/C failing?”), earn trust with certified technicians and a written guarantee, and keep the client with maintenance every six months. Ads with a visual hook in the first second, my own 3D props and a fixed contact bar.',
-  result:'A brand ready for the street and for paid media: brand book, 12 Meta ads, Google Display, feed, carousel, stories, fleet wrap, uniforms and out-of-home.',
+  challenge:'An A/C maintenance, installation and repair company had to look reliable on the street and online. I identified that people only remember their A/C when it stops cooling.',
+  solution:'I redrew the logo in vectors and built the system around one idea: get in through the urgency, earn trust with certified technicians and a written guarantee, and keep the client with maintenance every six months. I used the word “fresco” on purpose: it’s the Salvadoran fruit drink everyone knows, and the same fresh feeling as cool A/C air.',
+  result:'I delivered a brand ready for the street and for paid media: brand book, 12 Meta ads, Google Display, feed, carousel, stories, fleet wrap, uniforms and out-of-home.',
   blocks:[
    {k:'01',h:'Where it started',p:'The client’s brand sheet: a water-drop mark, a blue palette and a few applications. A good base, but no system to sell with.',imgs:['orig-1','orig-2'],c:2},
    {k:'02',h:'The insight',p:'“I only remember my A/C when it stops cooling.” People aren’t looking for a technician, they want to feel cool again today, with no surprises.',imgs:['bb-strategy']},
@@ -1312,10 +1359,10 @@ const PROJECTS=[
    {k:'',h:'',p:'',imgs:['uniforms','feed'],c:2}
   ],imgs:[]},
  {id:'training',tags:['data'],title:'Training guides',eye:'Information design · Training',cover:'work/p09.jpg',dir:'training',
-  meta:['Fintech operations · U.S.','Onboarding & QA','Performance reporting'],
-  challenge:'A U.S. payments support team grew from zero to 40+ people. New hires had to learn complex processes fast, without mistakes with client money or private data.',
-  solution:'A training library in plain English: step-by-step guides and call flows, process infographics, QA do’s and don’ts with a scorecard, a 30-day onboarding plan, and a monthly results report so leads could see what was working.',
-  result:'About 225 tickets solved a month, an average QA score of 94% and new hires ready in 3 weeks instead of 6.',
+  meta:['Debt relief operations · Forth','Onboarding & QA','Visual action plans'],
+  challenge:'The team I led lacked training material and clear communication, and the action plans we shared with the client were hard to follow and not very appealing.',
+  solution:'I made every action plan more visual and clear, and I built a training library in plain English: step-by-step guides and call flows, process infographics, QA do’s and don’ts with a scorecard and a 30-day onboarding plan, in the colors of Forth, the client.',
+  result:'I achieved about 225 tickets solved a month, an average QA score of 94% and new hires ready in 3 weeks instead of 6.',
   blocks:[
    {k:'01',h:'Step-by-step guides',p:'The transactions map above, an 8-step account closure guide and a 9-question call flow for the processes that caused the most errors.',imgs:['guides']},
    {k:'02',h:'Process infographics',p:'Check processing from arrival to deposit, with cut-off times and stop rules, and a three-tier escalation map with response times.',imgs:['check-process','escalation']},
@@ -1326,14 +1373,13 @@ const PROJECTS=[
   ],imgs:[]},
  {id:'dash',tags:['data'],title:'KPI dashboards',eye:'Data & reporting',cover:'work/p13.jpg',dir:'dash',
   meta:['Google Sheets','Looker Studio','Real live data'],
-  challenge:'Supervisors needed to see team performance during the day, not in a report a week later.',
-  solution:'I built the database in Google Sheets and connected it to Looker Studio with real live data: a clean DATA tab that joins every team, calculated fields for SLA and turnaround, and dashboards that refresh every 15 minutes and flag who needs coaching, with client data kept private.',
-  result:'The weekly report that took about 3 hours to build by hand now updates itself, and leads check the team twice a shift.',
+  challenge:'As a supervisor I needed the project numbers at hand, visible for my team and for my client, without waiting for a weekly report.',
+  solution:'I identified that the data lived in scattered trackers, so I built one database in Google Sheets and connected it to Looker Studio. The dashboard updated live, so anyone could see how each project was going at any moment, with client data kept private.',
+  result:'I achieved a weekly report that updates itself (it used to take me about 3 hours by hand), and my team and my client could follow the progress live.',
   blocks:[
    {k:'01',h:'How it’s built',p:'From the daily tracker to a clean data tab, a Looker Studio data source and the dashboards each role uses.',imgs:['pipeline']},
    {k:'02',h:'The database',p:'One row per task, dropdowns for every status and a protected DATA tab, so the numbers never break.',imgs:['database']},
-   {k:'03',h:'Connecting live data',p:'Calculated fields for on time, overdue and turnaround, and a Google Sheets connector that refreshes every 15 minutes.',imgs:['calculated-fields']},
-   {k:'04',h:'Dashboard examples',p:'A team operations view for leads during the shift, and a QA and SLA view that shows who needs coaching.',imgs:['team-operations','qa-sla']}
+   {k:'03',h:'Live dashboard',p:'The team operations view my team and my client checked during the day, updated live.',imgs:['team-operations']}
   ],imgs:[]}
 ];
 // Hidden for now (Rodá): kept in the data so it can be restored by removing hidden:true
@@ -1387,6 +1433,39 @@ function watchVideos(){
 }
 dlg.addEventListener('close',()=>{if(vio)vio.disconnect();document.querySelectorAll('#pj-imgs video').forEach(v=>v.pause())});
 grid.addEventListener('click',e=>{const t=e.target.closest('.tile');if(t)openProject(t.dataset.id)});
+/* hover on a project: its pieces start rotating every 2 s (paid ads first) */
+(function(){
+  if(!matchMedia('(hover: hover)').matches||reduce)return;
+  const SLIDE=2000,MAX=12;
+  function pics(p){
+    let l=[];
+    if(p.blocks)p.blocks.forEach(b=>b.imgs.forEach(n=>l.push(`work/${p.dir||'home'}/${n.replace('.mp4','')}.jpg`)));
+    else l=p.imgs.map(n=>`work/p${pad(n)}.jpg`);
+    l=[...new Set(l)].filter(u=>u!==p.cover);
+    const ad=u=>/\/ad-\d/.test(u);
+    return [...l.filter(ad),...l.filter(u=>!ad(u))].slice(0,MAX);
+  }
+  let timer=null,cur=null;
+  function stop(){clearTimeout(timer);timer=null;if(cur){cur.querySelectorAll('.sl').forEach(i=>i.classList.remove('on'));cur=null}}
+  grid.addEventListener('pointerover',e=>{
+    const t=e.target.closest('.tile');if(!t||t===cur)return;stop();
+    const p=PROJECTS.find(x=>x.id===t.dataset.id);if(!p)return;
+    const list=pics(p);if(!list.length)return;
+    const cv=t.querySelector('.cv');cur=t;
+    let a=cv.querySelector('.sl.a'),b=cv.querySelector('.sl.b');
+    if(!a){[a,b]=['a','b'].map(k=>{const i=new Image();i.className='sl '+k;i.alt='';i.decoding='async';cv.insertBefore(i,cv.querySelector('b'));return i})}
+    let k=0,front=a,back=b;
+    const pre=u=>{const i=new Image();i.src=u};
+    back.src=list[0];pre(list[1%list.length]);
+    function show(){
+      const nb=back;nb.classList.add('on');front.classList.remove('on');back=front;front=nb;
+      k=(k+1)%(list.length+1);
+      back.src=k<list.length?list[k]:p.cover;pre(list[(k+1)%list.length]);
+    }
+    timer=setTimeout(function go(){show();timer=setTimeout(go,SLIDE)},700);
+  });
+  grid.addEventListener('pointerout',e=>{if(cur&&!cur.contains(e.relatedTarget))stop()});
+})();
 document.getElementById('pj-x').addEventListener('click',()=>dlg.close());
 document.getElementById('pj-contact').addEventListener('click',()=>dlg.close());
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
