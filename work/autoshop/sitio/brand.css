@@ -1,0 +1,11 @@
+:root{--gra:#15181D;--asf:#22262D;--hue:#F3F1EC;--pap:#FBFAF7;--ace:#8B929C;--lin:#DAD6CE;--ama:#FFC81E;--ama2:#F2B705;
+--tag:path('M38 0 H188 A12 12 0 0 1 200 12 V100 A12 12 0 0 1 188 112 H38 L2 70 Q0 67.5 0 64 V48 Q0 44.5 2 42 Z');}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;color:var(--gra);-webkit-font-smoothing:antialiased}
+.h{font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.88}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.02em}
+.micro{font-family:Inter;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:.6em;border-radius:999px;font-weight:600;white-space:nowrap}
+.pill.y{background:var(--ama);color:var(--gra)}
+.pill.d{background:var(--gra);color:var(--hue)}
+.pill.o{border:1.5px solid currentColor}
